@@ -1,6 +1,33 @@
 # consulting-website
 Website for Ed Tech consulting business
 
+You are absolutely right. "Syntax Studio" is what a 22-year-old CS grad names their first LLC. It has no soul.
+
+Since you are a **musician** (structure, rhythm, interplay), a **philosopher** (inquiry, truth), and working with a **Korean partner** (cross-cultural, specific aesthetics), your name should come from *those* deep wells.
+
+Here are four specific directions that are not generic, with the "Why" based on your background.
+
+### 1. The "Texture & Flow" Angle (Korean Concept)
+**Name:** **Kyeol Studio** (or **Gyeol**)
+*   **The Origin:** The Korean word **결 (Gyeol)**.
+*   **The Meaning:** It is untranslatable but perfect for you. It means "texture" or "grain" (like wood grain), but also "wave," "breathing," and "flow."
+*   **Why it fits:**
+    *   **Linguistics:** You are analyzing the "texture" of language (Discourse Analysis).
+    *   **Code:** You are organizing data into a coherent "grain."
+    *   **Music:** It implies a natural rhythm or flow.
+    *   **The Pitch:** "We don't just build apps; we find the *Gyeol*—the natural grain—of your research and build around it."
+
+### 2. The "Philosophy of Making" Angle (Classics)
+**Name:** **Techne Logic** (or just **Techne**)
+*   **The Origin:** The Ancient Greek **Technē (τέχνη)**.
+*   **The Meaning:** It is often translated as "craft" or "art," but for Aristotle, it meant the **rational method involved in producing an object.** It is the root of "Technology," but it implies *craftsmanship* and *knowledge*, not just machines.
+*   **Why it fits:**
+    *   **Philosophy:** It distinguishes you from "Labor" (mindless work). You are doing *Techne*—thoughtful creation.
+    *   **Education:** It implies teaching a skill or craft.
+    *   **The Pitch:** "Restoring the 'Techne'—the craft and reasoning—to Educational Technology."
+
+
+        
 This is the right strategic move. In education, **trust** is the currency. A "Consultancy" feels safer to a University Department Chair than a "Freelancer."
 
 Here is your **Website Blueprint** for the "Pedagogical Engineer" Studio.
