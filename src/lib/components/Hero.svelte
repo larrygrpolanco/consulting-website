@@ -42,25 +42,24 @@
 
 <section bind:this={heroRef} class="hero" class:visible={show}>
 	<div class="header">
-		<h1 class="headline">Chaone Labs</h1>
-		<h2 class="sub-headline">Open Research Technologies for Education & Linguistics</h2>
+		<h1 class="headline">We build software that understands your research.</h1>
+		<h2 class="sub-headline">A design and technology studio for educators, linguists, and researchers. We bridge the gap between academic theory and production-grade code.</h2>
 	</div>
 
 	<div class="description">
 		<div>
-			<h3>"Finding the texture in the text."</h3>
+			<h3>"We practice Methodology as Code."</h3>
 		</div>
 		<div>
 			<p>
-				We build the "Missing Middle"—tools that follow the natural flow
-				of research and pedagogy. Transform your data into reproducible insights.
+				We build software that respects the nuance of research and the texture of learning.
 			</p>
 		</div>
 	</div>
 
 	<div class="cta-group">
 		<a href="/work" class="btn primary">View Our Work</a>
-		<a href="/services" class="btn secondary">Book a Consultation</a>
+		<a href="/services" class="btn secondary">Start a Project</a>
 	</div>
 </section>
 

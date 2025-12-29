@@ -15,67 +15,63 @@ export interface Project {
 
 export const projects: Project[] = [
 	{
-		slug: 'project-1',
-		title: 'No Moss',
-		description: 'Capstone project for final year of university. Fullstack web app built with Nuxt 4.',
-		longDescription: 'Capstone project for final year of university. Worked in a team of 5 and partnered with a company called No Moss: a purpose centric organization who promotes purpose centric work practices such as purpose reflection and career alignment. Built a fullstack web app using Nuxt 4 to help users track their purpose and goals.',
-		tags: ['Purpose Discovery', 'Fullstack Development', 'Nuxt 4'],
-		year: '2025',
-		client: 'University',
-		media: [
-			{ type: 'image', url: '/projects/project-1/1.webp', alt: 'No Moss 1' },
-			{ type: 'video', url: '/projects/project-1/2.mp4' },
-			{ type: 'video', url: '/projects/project-1/3.mp4' },
-			{ type: 'video', url: '/projects/project-1/4.mp4' },
-			{ type: 'image', url: '/projects/project-1/5.webp', alt: 'No Moss 5' }
-		]
-	},
-	{
-		slug: 'project-2',
-		title: 'MTech',
-		description: 'A platform for technical education and resource management.',
-		longDescription: 'MTech is a comprehensive platform designed to streamline technical education and resource allocation for engineering students and faculty.',
-		tags: ['Education Tech', 'React', 'TypeScript'],
+		slug: 'sabr-genre-analysis',
+		title: 'SABR / Genre Analysis Tool',
+		description: 'Automating qualitative coding frameworks with high human agreement.',
+		longDescription: 'How we automated a manual coding framework (Genre Analysis "Moves & Steps") to reach 78% human agreement using custom Python/LLM workflows.',
+		tags: ['Research Instrumentation', 'NLP', 'Python'],
 		year: '2024',
-		client: 'MTech Inc.',
+		client: 'University Research Lab',
 		media: [
-			{ type: 'image', url: '/projects/project-2/1.webp', alt: 'MTech 1' },
-			{ type: 'video', url: '/projects/project-2/2.mp4' },
-			{ type: 'image', url: '/projects/project-2/3.webp', alt: 'MTech 3' },
-			{ type: 'image', url: '/projects/project-2/4.webp', alt: 'MTech 4' },
-			{ type: 'video', url: '/projects/project-2/5.mp4' }
+			{ type: 'image', url: '/projects/sabr/1.webp', alt: 'SABR Tool Interface' }
 		]
 	},
 	{
-		slug: 'project-3',
-		title: 'Kora',
-		description: 'Interactive language learning platform with a focus on Korean.',
-		longDescription: 'Kora is an interactive platform that leverages modern pedagogical theories to provide a deep and engaging Korean language learning experience.',
-		tags: ['Linguistics', 'Interactive', 'Next.js'],
+		slug: 'taped-chinese',
+		title: 'TapedChinese',
+		description: 'A production-grade language platform with LLM-generated content.',
+		longDescription: 'Developing a comprehensive language learning platform that utilizes Generative AI to create infinite, level-appropriate practice material aligned with specific pedagogy.',
+		tags: ['Bespoke Ed Software', 'AI', 'SvelteKit'],
 		year: '2024',
-		client: 'Kora Education',
+		client: 'Educational Startup',
 		media: [
-			{ type: 'image', url: '/projects/project-3/1.webp', alt: 'Kora 1' },
-			{ type: 'video', url: '/projects/project-3/2.mp4' },
-			{ type: 'image', url: '/projects/project-3/3.webp', alt: 'Kora 3' },
-			{ type: 'image', url: '/projects/project-3/4.webp', alt: 'Kora 4' },
-			{ type: 'video', url: '/projects/project-3/5.mp4' }
+			{ type: 'image', url: '/projects/taped-chinese/1.webp', alt: 'TapedChinese Dashboard' }
 		]
 	},
 	{
-		slug: 'project-4',
-		title: 'Portfolio v1',
-		description: 'Initial version of my personal portfolio showcasing creative development.',
-		longDescription: 'The first iteration of my personal portfolio, focusing on clean design and experimental web technologies to showcase my journey as a creative developer.',
-		tags: ['Creative Dev', 'SvelteKit', 'GSAP'],
+		slug: 'fulbright-planner',
+		title: 'Fulbright Planner',
+		description: 'Reducing lesson planning time using structured AI prompting.',
+		longDescription: 'A tool designed for educators to reduce weekly lesson planning time by up to 4 hours through structured, pedagogically-sound AI prompt engineering.',
+		tags: ['Bespoke Ed Software', 'Productivity', 'LLM'],
 		year: '2023',
-		client: 'Personal',
+		client: 'Fulbright Program',
 		media: [
-			{ type: 'image', url: '/projects/project-4/1.webp', alt: 'Portfolio v1 1' },
-			{ type: 'video', url: '/projects/project-4/2.mp4' },
-			{ type: 'image', url: '/projects/project-4/3.webp', alt: 'Portfolio v1 3' },
-			{ type: 'image', url: '/projects/project-4/4.webp', alt: 'Portfolio v1 4' },
-			{ type: 'image', url: '/projects/project-4/5.webp', alt: 'Portfolio v1 5' }
+			{ type: 'image', url: '/projects/fulbright/1.webp', alt: 'Fulbright Planner UI' }
+		]
+	},
+	{
+		slug: 'conference-app',
+		title: 'Conference Companion App',
+		description: 'Increasing audience engagement through real-time interaction.',
+		longDescription: 'Real-time web apps that allow conference audiences to interact with a speaker\'s data or models during a talk, turning static presentations into interactive experiences.',
+		tags: ['Interactive Dissemination', 'Real-time', 'WebSockets'],
+		year: '2024',
+		client: 'TESOL/AAAL presenters',
+		media: [
+			{ type: 'image', url: '/projects/conference-app/1.webp', alt: 'Conference App Interaction' }
+		]
+	},
+	{
+		slug: 'cancer-research-data',
+		title: 'Cancer Research Data Pipeline',
+		description: 'Managing large-scale, sensitive datasets with high fidelity.',
+		longDescription: 'Professional cleaning, organization, and harmonization of large-scale, sensitive cancer research datasets to prepare them for rigorous academic analysis.',
+		tags: ['Research Instrumentation', 'Data Engineering', 'Healthcare'],
+		year: '2023',
+		client: 'Medical Research Center',
+		media: [
+			{ type: 'image', url: '/projects/cancer-research/1.webp', alt: 'Data Pipeline Visualization' }
 		]
 	}
 ];
