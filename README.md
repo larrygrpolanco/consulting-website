@@ -1,11 +1,143 @@
+
+Here is the **Manifesto & Plan** for your repository. Since you want to use this as a reference/grounding document, I have structured it to serve as both a **Business Plan** for you and a **README** for the public.
+
+***
+
+# Kyeol Lab (결)
+### Open Research Technologies for Education & Linguistics
+
+> **"Finding the texture in the text."**
+
+## 📜 The Manifesto
+**Kyeol (결)** is a Korean concept referring to "texture," "grain," or "wave"—like the grain of wood, the flow of breath, or the texture of a sound.
+
+At **Kyeol Lab**, we believe that language learning and qualitative research have a natural "grain." Most EdTech ignores this grain, forcing educators into rigid, generic boxes. We exist to build tools that follow the natural flow of research and pedagogy.
+
+We are a **Mission-Driven LLC**. We are researchers who code. We build the "Missing Middle"—tools that are more robust than a throwaway Python script but more transparent and specialized than enterprise "Black Box" software.
+
+---
+
+## 🔭 The 5-Year Horizon (Our Definition of Success)
+We do not optimize for "Unicorn" status or Venture Capital returns. We optimize for impact and sustainability. By 2030, success looks like:
+
+1.  **Impact:** **5,000+ researchers and educators** actively using our free/open-core tools.
+2.  **Sustainability:** Generating **$30,000 - $40,000/year** in revenue to sustain operations.
+    *   *Sources:* Institutional licenses, specialized workshops, and bespoke consulting.
+3.  **Scholarship:** Publishing **3+ peer-reviewed papers** on the methodology and architecture behind our tools.
+
+---
+
+## 🏗 The Architecture of the Lab
+
+This website serves as the headquarters for two distinct but connected operations:
+
+### 1. The Open Lab (Public Goods)
+We build and maintain open-access tools for the Applied Linguistics community.
+*   **SABR (System for Automated Coding):** An LLM-assisted pipeline for qualitative coding and discourse analysis.
+*   **TapedChinese:** A demonstration of deterministic content validation in language learning.
+*   **Fulbright Planner:** AI-assisted lesson planning for cross-cultural contexts.
+
+### 2. The Studio (Bespoke Services)
+We offer high-touch engineering and consulting for partners with budgets (Universities, Publishers, Grant-Funded PIs).
+*   **Service A:** **Custom Research Instrumentation.** Turning a researcher's manual data methodology into a reproducible software pipeline.
+*   **Service B:** **Curriculum Digitization.** Building "Web Companions" for niche textbooks that large publishers ignore.
+*   **Service C:** **Interactive Scholarship.** Creating bespoke websites for conference presentations and grant dissemination.
+
+---
+
+## 🛠 Tech Stack & Standards
+We treat code as a form of academic writing: it must be clean, cited, and reproducible.
+
+*   **Frontend:** [SvelteKit](https://kit.svelte.dev/) (Chosen for high performance and reactivity).
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com/) + Custom Typography (Serif headers for academic trust).
+*   **Backend/Analysis:** Python (FastAPI) & LangChain for LLM orchestration.
+*   **Data:** PostgreSQL & JSON-based portable formats for researcher privacy.
+
+---
+
+## 📂 Repository Structure
+
+```text
+/src
+  /lib
+    /components   # UI Library (The "Kyeol" Design System)
+    /content      # Markdown: Blog posts, Case Studies, Manifestos
+  /routes
+    /             # Home: The Mission & The Offer
+    /lab          # The Tools: Links to SABR, TapedChinese, etc.
+    /services     # The Studio: How to hire us for bespoke work
+    /papers       # The Methodology: Whitepapers and pre-prints
+    /about        # The Team: Larry & Partners
+```
+
+---
+
+## 🧭 Roadmap
+
+### Phase 1: Grounding (Current)
+- [ ] Establish Legal Entity (Kyeol Lab LLC) in Florida.
+- [ ] Deploy MVP Website (Home, About, Lab).
+- [ ] Refine "SABR" into a showcase-ready web tool.
+
+### Phase 2: Outreach
+- [ ] Publish Case Study: *"Reducing Lesson Planning Time via LLM Automation."*
+- [ ] Present "Open Tools for Discourse Analysis" at TESOL/AAAL.
+- [ ] Secure first "Bespoke" client (University Department or Textbook Publisher).
+
+### Phase 3: The Platform
+- [ ] Release the **"Kyeol Open Standard"** for qualitative data interchange.
+- [ ] Launch the institutional licensing tier for privacy-focused universities.
+
+---
+
+## 👤 The Team
+
+**Larry Grullon-Polanco, M.A.**
+*Applied Linguist & Lead Engineer*
+Specializing in the intersection of Discourse Analysis, LLMs, and Full-Stack Development.
+
+**[Partner Name], Ph.D.**
+*Lead Researcher & Pedagogical Director*
+Ensuring every tool is grounded in current pedagogical theory and qualitative rigor.
+
+---
+
+## ⚖️ License & Philosophy
+
+**Copyright © 2025 Kyeol Lab LLC.**
+
+*   **Content:** All blog posts and methodologies are Creative Commons (CC-BY).
+*   **Code:** Our core research libraries are MIT Licensed. Our bespoke client work is proprietary.
+
+> *"We don't just build apps; we find the grain of your research and build around it."*
+
+***
+
+### Why this fits your plan:
+
+1.  **The Name:** **Kyeol Lab** sounds established and academic, but "texture/flow" gives it an artistic soul that separates you from boring corporate consulting.
+2.  **The "Open" Subtitle:** Putting "Open Research Technologies" in the subtitle signals to researchers that you are "one of them," not a vendor trying to extract money.
+3.  **The Two-Track Model:** The README clearly separates the "Open Lab" (Free/Mission) from the "Studio" (Paid/Sustainability). This prevents confusion about how you make money.
+4.  **The "Papers" Section:** Adding a route for `/papers` or `/methodology` is a power move. It proves you are doing rigorous work, which allows you to charge premium rates for consulting.
+
+**Next Step:** When you build the site, use a lot of white space, a deep navy blue (institutional trust), and a serif font (academic feel). It should feel like a modern digital library.
+
+
+
+
+
+
+Look at this website plan for my planned llc. I have been thinking about what direction to take this in and how to structure this. To me this is success
+in 5 years you had 5,000 researchers using your free tools, you were making $30-40K/year from workshops and institutional licenses, and you'd published 3 papers about the methodology
+
+So i'm thinking something like a mission driven llc so I want to flesh out this readme. This website will be the first thing I build then I will go into creating some more open source tools working on some more research and reaching out, but to me this website can be a ground, a source, a reminder. I also want a blog in there. To me it is also the first proof that I can develop not just things that work well but look well and are organized as this may be the first thing people see
+
 # consulting-website
 Website for Ed Tech consulting business
 
-You are absolutely right. "Syntax Studio" is what a 22-year-old CS grad names their first LLC. It has no soul.
 
-Since you are a **musician** (structure, rhythm, interplay), a **philosopher** (inquiry, truth), and working with a **Korean partner** (cross-cultural, specific aesthetics), your name should come from *those* deep wells.
 
-Here are four specific directions that are not generic, with the "Why" based on your background.
+Two possible Names
 
 ### 1. The "Texture & Flow" Angle (Korean Concept)
 **Name:** **Kyeol Studio** (or **Gyeol**)
@@ -131,5 +263,3 @@ Since you want to move fast:
 *   Since you are a dev, build it in **SvelteKit** (since you know it) or **Astro** (fast, content-focused).
 *   Host on **Vercel** (Free tier is fine for now).
 *   Use a clean UI library like **Tailwind UI** or **Shadcn** so you don't waste time designing buttons.
-
-Does this structure feel manageable? We can draft the exact text for the "Home Page" hero section if you want to nail the tone.
