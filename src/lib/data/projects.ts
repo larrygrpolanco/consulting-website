@@ -14,18 +14,18 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-	{
-		slug: 'sabr-genre-analysis',
-		title: 'SABR / Genre Analysis Tool',
-		description: 'Automating qualitative coding frameworks with high human agreement.',
-		longDescription: 'How we automated a manual coding framework (Genre Analysis "Moves & Steps") to reach 78% human agreement using custom Python/LLM workflows.',
-		tags: ['Research Instrumentation', 'NLP', 'Python'],
-		year: '2024',
-		client: 'University Research Lab',
-		media: [
-			{ type: 'image', url: '/projects/sabr/1.webp', alt: 'SABR Tool Interface' }
-		]
-	},
+	// {
+	// 	slug: 'sabr-genre-analysis',
+	// 	title: 'SABR / Genre Analysis Tool',
+	// 	description: 'Automating qualitative coding frameworks with high human agreement.',
+	// 	longDescription: 'How we automated a manual coding framework (Genre Analysis "Moves & Steps") to reach 78% human agreement using custom Python/LLM workflows.',
+	// 	tags: ['Research Instrumentation', 'NLP', 'Python'],
+	// 	year: '2024',
+	// 	client: 'University Research Lab',
+	// 	media: [
+	// 		{ type: 'image', url: '/projects/sabr/1.webp', alt: 'SABR Tool Interface' }
+	// 	]
+	// },
 	{
 		slug: 'taped-chinese',
 		title: 'TapedChinese',
@@ -35,7 +35,7 @@ export const projects: Project[] = [
 		year: '2024',
 		client: 'Educational Startup',
 		media: [
-			{ type: 'image', url: '/projects/taped-chinese/1.webp', alt: 'TapedChinese Dashboard' }
+			{ type: 'image', url: '/images/taped-chinese.webp', alt: 'TapedChinese Dashboard' }
 		]
 	},
 	{
