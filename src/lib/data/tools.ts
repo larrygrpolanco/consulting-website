@@ -35,7 +35,7 @@ export const tools: Tool[] = [
 		media: [
 			{
 				type: 'image',
-				url: '/images/fulbright-planner-hero.webp',
+				url: '/images/fulbright-planner.webp',
 				alt: 'Fulbright Lesson Planner interface'
 			}
 		]

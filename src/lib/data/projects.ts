@@ -47,7 +47,7 @@ export const projects: Project[] = [
 		year: '2023',
 		client: 'Fulbright Program',
 		media: [
-			{ type: 'image', url: '/projects/fulbright/1.webp', alt: 'Fulbright Planner UI' }
+			{ type: 'image', url: '/images/fulbright-planner.webp', alt: 'Fulbright Planner UI' }
 		]
 	},
 	{
