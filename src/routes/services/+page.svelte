@@ -40,9 +40,9 @@
 
 <main bind:this={servicesRef} class="services-container">
 	<section class="hero-section">
-		<h1 class="headline">We build software that understands your research.</h1>
+		<h1 class="headline">What We Build</h1>
 		<p class="sub-headline">
-			A design and technology studio for educators, linguists, and researchers. We bridge the gap between academic theory and production-grade code.
+			Software for language research and education. We turn your ideas into working tools—research pipelines, learning apps, interactive websites.
 		</p>
 	</section>
 
@@ -50,9 +50,9 @@
 		<section class="service-item">
 			<h2 class="label">01 / RESEARCH TOOLS</h2>
 			<div class="content">
-				<h3>Automate your analysis. Keep the nuance.</h3>
+				<h3>Custom software for qualitative analysis.</h3>
 				<p>
-					Qualitative research is powerful, but manual coding is slow. We build custom tools that automate your specific frameworks—whether it’s genre analysis, move-step coding, or discourse tracking.
+					We build tools that automate your coding schemes. Genre analysis, discourse tracking, move-step coding—whatever your methodology requires. We turn manual processes into reproducible pipelines.
 				</p>
 				<ul class="capabilities">
 					<li><strong>Custom Analysis Scripts:</strong> Turn your manual coding schemes into automated workflows.</li>
@@ -65,9 +65,9 @@
 		<section class="service-item">
 			<h2 class="label">02 / EDUCATIONAL SOFTWARE</h2>
 			<div class="content">
-				<h3>Learning tools that actually match your syllabus.</h3>
+				<h3>Learning apps built for your curriculum.</h3>
 				<p>
-					Off-the-shelf language apps don’t know your curriculum. We build bespoke applications wrapped around your textbook and your teaching methods. Give your students practice that directly prepares them for your exams.
+					We build custom practice apps for language classrooms. Vocabulary trainers, grammar exercises, interactive assessments—all aligned to your textbook and syllabus. No generic content.
 				</p>
 				<ul class="capabilities">
 					<li><strong>Curriculum Companions:</strong> Custom apps trained on your specific vocabulary and grammar lists.</li>
@@ -78,11 +78,11 @@
 		</section>
 
 		<section class="service-item">
-			<h2 class="label">03 / INTERACTIVE PRESENTATIONS</h2>
+			<h2 class="label">03 / INTERACTIVE WEBSITES</h2>
 			<div class="content">
-				<h3>Don't just present your findings. Let them play with them.</h3>
+				<h3>Websites for research and conferences.</h3>
 				<p>
-					Static slides are for the past. We turn your research papers and conference talks into interactive web experiences. Allow your audience to manipulate variables, explore your dataset, and engage with your work live.
+					We build interactive web experiences for your research. Conference companion apps, data visualizations, interactive publications. Let your audience explore your work, not just read about it.
 				</p>
 				<ul class="capabilities">
 					<li><strong>Conference Companion Apps:</strong> Real-time mobile tools for your audience to use during your talk.</li>
@@ -93,11 +93,11 @@
 		</section>
 
 		<section class="service-item">
-			<h2 class="label">04 / STRATEGIC CONSULTING</h2>
+			<h2 class="label">04 / CONSULTING & WORKSHOPS</h2>
 			<div class="content">
-				<h3>Navigate the AI shift with confidence.</h3>
+				<h3">AI integration and data strategy.</h3>
 				<p>
-					AI is changing how we teach and research. Don’t rely on generic advice from tech companies. Get guidance from experts who understand Applied Linguistics, data privacy, and the realities of the classroom.
+					We help departments and researchers use AI tools responsibly. Curriculum audits, data cleaning, staff training. Practical guidance from people who understand both the technology and the pedagogy.
 				</p>
 				<ul class="capabilities">
 					<li><strong>AI Curriculum Audits:</strong> We help you integrate AI into your program safely and effectively.</li>
@@ -112,7 +112,7 @@
 		<h2 class="label">PHILOSOPHY</h2>
 		<div class="content">
 			<blockquote class="philosophy-quote">
-				"We practice Methodology as Code. We build software that respects the nuance of research and the texture of learning."
+				"We're researchers who learned to code. We build software that works the way you work—not software that forces you to adapt."
 			</blockquote>
 		</div>
 	</section>

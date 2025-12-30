@@ -38,7 +38,7 @@
 		<h2 class="label">BIO</h2>
 		<div class="content">
 			<p>
-				<strong>차원 Chaone Labs</strong> is an open research studio focused on developing technologies for education and linguistics. We build the "Missing Middle"—tools that follow the natural flow of research and pedagogy.
+				<strong>차원 Chaone Labs</strong> is a research and development studio for language education and linguistics. We build custom software—research tools, learning apps, and interactive websites. Run by applied linguists who code.
 			</p>
 		</div>
 	</section>
@@ -64,14 +64,18 @@
 	</section>
 
 	<section class="section section-story">
-		<h2 class="label">PERSONAL STORY</h2>
+		<h2 class="label">WHY WE EXIST</h2>
 		<div class="content">
 			<p>
-				Our mission is built on "Finding the texture in the text." We believe that language learning and qualitative research have a natural grain—a flow that most EdTech ignores. 
+				Most research and teaching software is built by people who don't do research or teaching. They build what they think you need, not what you actually need.
 			</p>
 			<br />
 			<p>
-				We exist to build tools that are more robust than a throwaway script but more transparent and specialized than enterprise "Black Box" software. We treat code as a form of academic writing: it must be clean, cited, and reproducible.
+				We're applied linguists who learned to code because we were tired of fighting with software that didn't understand our work. Now we build tools for other researchers and educators.
+			</p>
+			<br />
+			<p>
+				Our software is specific, transparent, and built to last.
 			</p>
 		</div>
 	</section>

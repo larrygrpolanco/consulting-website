@@ -36,9 +36,9 @@
 
 <main bind:this={workRef} class="work-container">
 	<header class="work-header">
-		<h1 class="headline">Selected Projects</h1>
+		<h1 class="headline">Projects</h1>
 		<p class="sub-headline">
-			A curated selection of past projects that shaped our approach to research and pedagogy—spanning NLP, educational tech, and data engineering.
+			Tools and websites we've built. Open-source projects, client work, and experiments.
 		</p>
 	</header>
 

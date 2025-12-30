@@ -37,8 +37,8 @@
 
 <section bind:this={heroRef} class="hero" class:visible={show}>
 	<div class="header">
-		<h1 class="headline">Applied linguistics research meets production-grade code.</h1>
-		<h2 class="sub-headline">We're researchers and educators who build open-source tools and custom applications for the language sciences.</h2>
+		<h1 class="headline">We build software for language researchers and educators.</h1>
+		<h2 class="sub-headline">Custom research tools, educational apps, and interactive websites—built by applied linguists who code.</h2>
 	</div>
 
 	<div class="cta-group">
