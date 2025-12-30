@@ -95,7 +95,7 @@
 		<section class="service-item">
 			<h2 class="label">04 / CONSULTING & WORKSHOPS</h2>
 			<div class="content">
-				<h3">AI integration and data strategy.</h3>
+				<h3>AI integration and data strategy.</h3>
 				<p>
 					We help departments and researchers use AI tools responsibly. Curriculum audits, data cleaning, staff training. Practical guidance from people who understand both the technology and the pedagogy.
 				</p>

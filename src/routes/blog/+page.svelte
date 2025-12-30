@@ -1,6 +1,31 @@
 <script lang="ts">
 	import Nav from '$lib/components/Nav.svelte';
+	import { tick } from 'svelte';
+	import { gsap } from 'gsap';
+
 	let { data } = $props();
+	let blogRef: HTMLElement;
+
+	$effect(() => {
+		animateIn();
+	});
+
+	async function animateIn() {
+		await tick();
+		gsap.context(() => {
+			const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+			tl.fromTo('.blog-header',
+				{ y: 40, opacity: 0 },
+				{ y: 0, opacity: 1, duration: 0.8 }
+			)
+			.fromTo('.blog-list-item',
+				{ y: 20, opacity: 0 },
+				{ y: 0, opacity: 1, duration: 0.6, stagger: 0.1 },
+				'-=0.4'
+			);
+		}, blogRef);
+	}
 </script>
 
 <svelte:head>
@@ -9,7 +34,7 @@
 
 <Nav />
 
-<main class="blog-container">
+<main bind:this={blogRef} class="blog-container">
 	<header class="blog-header">
 		<h1 class="text-serif">Blog<sup class="count">({data.posts.length})</sup></h1>
 		<div class="sidebar-header"><span>LATEST INSIGHTS</span></div>
@@ -61,6 +86,7 @@
 		position: sticky;
 		top: 160px;
 		height: fit-content;
+		opacity: 0;
 	}
 
 	.blog-header h1 {
@@ -116,6 +142,7 @@
 
 	.blog-list-item {
 		border-bottom: 1px solid rgba(0, 33, 71, 0.05);
+		opacity: 0;
 	}
 
 	.blog-link {
@@ -153,3 +180,4 @@
 		}
 	}
 </style>
+

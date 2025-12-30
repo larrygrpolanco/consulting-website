@@ -28,14 +28,14 @@ export const projects: Project[] = [
 	// },
 	{
 		slug: 'taped-chinese',
-		title: 'TapedChinese',
-		description: 'A production-grade language platform with LLM-generated content.',
-		longDescription: 'Developing a comprehensive language learning platform that utilizes Generative AI to create infinite, level-appropriate practice material aligned with specific pedagogy.',
-		tags: ['Bespoke Ed Software', 'AI', 'SvelteKit'],
+		title: 'Taped Chinese',
+		description: 'A modern web-based language learning platform digitizing FSI course materials with a vintage cassette aesthetic.',
+		longDescription: 'Standard Chinese Platform transforms the comprehensive FSI course (originally used to train diplomats) into an accessible, interactive format for modern learners. The platform preserves the original 9-module structure while adding interactive features and a user-friendly interface.',
+		tags: ['Education Software', 'Web App', 'SvelteKit'],
 		year: '2024',
-		client: 'Educational Startup',
+		client: 'Internal Product',
 		media: [
-			{ type: 'image', url: '/images/taped-chinese.webp', alt: 'TapedChinese Dashboard' }
+			{ type: 'image', url: '/images/taped-chinese.webp', alt: 'Taped Chinese Interface' }
 		]
 	},
 	{
