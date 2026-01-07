@@ -48,7 +48,7 @@
 	</div>
 
 	<div class="cta-group">
-		<a href="/tools" class="btn primary">Explore Our Tools</a>
+		<a href="/lab" class="btn primary">Explore Our Tools</a>
 		<a href="/services" class="btn secondary">Custom Development</a>
 	</div>
 </section>
