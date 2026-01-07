@@ -16,6 +16,8 @@
 				<span class="value">{data.meta.date.replaceAll('-', '.')}</span>
 				<span class="label">AUTHOR</span>
 				<span class="value">{data.meta.author}</span>
+				<span class="label">READING TIME</span>
+				<span class="value">5 MIN</span>
 			</div>
 			<h1 class="text-serif">{data.meta.title}</h1>
 			{#if data.meta.tags}
@@ -35,20 +37,6 @@
 			<a href="/blog" class="back-link">← BACK TO BLOG</a>
 		</footer>
 	</article>
-
-	<aside class="post-sidebar">
-		<div class="sidebar-section">
-			<span class="sidebar-label">SHARE</span>
-			<div class="share-links">
-				<a href="#">X</a>
-				<a href="#">LINKEDIN</a>
-			</div>
-		</div>
-		<div class="sidebar-section">
-			<span class="sidebar-label">EST. READING TIME</span>
-			<span class="sidebar-value">5 MIN</span>
-		</div>
-	</aside>
 </main>
 
 <style>
@@ -56,24 +44,15 @@
 		max-width: 1200px;
 		width: 100%;
 		margin: 0 auto;
-		padding: 40px 5vw 100px;
-		display: grid;
-		grid-template-columns: 1fr 250px;
-		gap: 80px;
+		padding: 40px 20px 100px;
+		display: flex;
+		justify-content: center;
 		overflow-x: hidden;
 	}
 
-	@media (max-width: 1024px) {
-		.post-container {
-			grid-template-columns: 1fr;
-		}
-		.post-sidebar {
-			display: none;
-		}
-	}
-
 	.post {
-		max-width: 800px;
+		width: 100%;
+		max-width: 720px;
 	}
 
 	.post-header {
@@ -95,6 +74,7 @@
 		font-size: 10px;
 		letter-spacing: 0.15em;
 		color: var(--foreground-200);
+		text-transform: uppercase;
 	}
 
 	.value {
@@ -110,6 +90,7 @@
 
 	.tags {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 12px;
 	}
 
@@ -128,7 +109,7 @@
 
 	/* Markdown Styling */
 	:global(.post-content h2) {
-		font-size: 32px;
+		font-size: clamp(24px, 4vw, 32px);
 		margin: 48px 0 24px;
 	}
 
@@ -145,6 +126,7 @@
 		font-family: var(--font-mono);
 		font-size: 14px;
 		line-height: 1.5;
+		max-width: 100%;
 	}
 
 	:global(.post-content code) {
@@ -153,6 +135,7 @@
 		border-radius: 4px;
 		font-family: var(--font-mono);
 		font-size: 0.9em;
+		word-break: break-word;
 	}
 
 	:global(.post-content ul, .post-content ol) {
@@ -177,39 +160,26 @@
 		font-weight: 700;
 	}
 
-	.post-sidebar {
-		position: sticky;
-		top: 160px;
-		height: fit-content;
-		display: flex;
-		flex-direction: column;
-		gap: 40px;
-	}
+	@media (max-width: 768px) {
+		.post-container {
+			padding: 24px 20px 80px;
+		}
+		
+		.post-header {
+			margin-bottom: 40px;
+		}
 
-	.sidebar-label {
-		font-family: var(--font-mono);
-		font-size: 10px;
-		letter-spacing: 0.15em;
-		color: var(--foreground-200);
-		margin-bottom: 12px;
-		display: block;
-	}
+		.post-meta {
+			grid-template-columns: 1fr;
+			gap: 4px;
+		}
 
-	.share-links {
-		display: flex;
-		flex-direction: column;
-		gap: 8px;
-	}
+		.label {
+			margin-top: 8px;
+		}
 
-	.share-links a {
-		font-family: var(--font-mono);
-		font-size: 12px;
-		color: var(--foreground-200);
-	}
-
-	.sidebar-value {
-		font-family: var(--font-mono);
-		font-size: 14px;
-		font-weight: 700;
+		.label:first-child {
+			margin-top: 0;
+		}
 	}
 </style>

@@ -1,9 +1,9 @@
 @import 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap';
 
 :root {
-	--background: #F5F5F0; /* Cream / Paper */
+	--background: #f5f5f0; /* Cream / Paper */
 	--foreground: #002147; /* Deep Navy / Institutional Trust */
-	--foreground-200: #4A5568;
+	--foreground-200: #4a5568;
 	--accent: #008080; /* Teal / Action */
 	--font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
 	--font-serif: 'Merriweather', serif;
@@ -33,7 +33,9 @@ body {
 	display: none;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
 	font-family: var(--font-serif);
 	line-height: 1.1;
 }
@@ -55,16 +57,20 @@ h3 {
 	font-style: italic;
 }
 
-p, a, li {
-	color: var(--foreground);
+p,
+li {
 	font-size: 16px;
+}
+
+p,
+a,
+li {
+	color: var(--foreground);
 	line-height: 1.6;
 	font-weight: 400;
 	text-decoration: none;
 	transition: color 0.3s;
 }
-
-
 
 .container {
 	width: 100vw;

@@ -49,21 +49,21 @@
 			<div class="content">
 				<h3>Custom software for qualitative analysis.</h3>
 				<p>
-					We build tools that automate your coding schemes. Genre analysis, discourse tracking,
-					move-step coding—whatever your methodology requires. We turn manual processes into
-					reproducible pipelines.
+					Automate your coding schemes with custom pipelines. We turn manual processes—genre analysis,
+					discourse tracking, move-step coding—into reproducible workflows.
 				</p>
-				<ul class="capabilities">
-					<li>
-						<strong>Custom Analysis Scripts:</strong> Turn your manual coding schemes into automated workflows.
-					</li>
-					<li>
-						<strong>Data Cleaning:</strong> We prepare messy, large-scale datasets for serious analysis.
-					</li>
-					<li>
-						<strong>Methodology Sandboxes:</strong> Test your theories on real data before you publish.
-					</li>
+				<ul class="sub-fields">
+					<li>Custom Analysis Scripts</li>
+					<li>Data Cleaning</li>
+					<li>Methodology Sandboxes</li>
 				</ul>
+				<div class="project-feature">
+					<div class="feature-label">FEATURED PROJECT</div>
+					<a href="/lab/sabr-genre-analysis" class="project-link">
+						<span class="project-name">SABR / Genre Analysis Tool</span>
+						<span class="arrow">→</span>
+					</a>
+				</div>
 			</div>
 		</section>
 
@@ -72,23 +72,21 @@
 			<div class="content">
 				<h3>Learning apps built for your curriculum.</h3>
 				<p>
-					We build custom practice apps for language classrooms. Vocabulary trainers, grammar
-					exercises, interactive assessments—all aligned to your textbook and syllabus. No generic
-					content.
+					Custom practice apps aligned to your syllabus. Vocabulary trainers, grammar exercises, and
+					interactive assessments with no generic content.
 				</p>
-				<ul class="capabilities">
-					<li>
-						<strong>Curriculum Companions:</strong> Custom apps trained on your specific vocabulary and
-						grammar lists.
-					</li>
-					<li>
-						<strong>Interactive Assessments:</strong> AI-powered roleplays and simulations with strict
-						pedagogical guardrails.
-					</li>
-					<li>
-						<strong>Teacher Dashboards:</strong> See exactly where your students are struggling in real-time.
-					</li>
+				<ul class="sub-fields">
+					<li>Curriculum Companions</li>
+					<li>Interactive Assessments</li>
+					<li>Teacher Dashboards</li>
 				</ul>
+				<div class="project-feature">
+					<div class="feature-label">FEATURED PROJECT</div>
+					<a href="/lab/taped-chinese" class="project-link">
+						<span class="project-name">Taped Chinese</span>
+						<span class="arrow">→</span>
+					</a>
+				</div>
 			</div>
 		</section>
 
@@ -97,24 +95,21 @@
 			<div class="content">
 				<h3>Websites for research and conferences.</h3>
 				<p>
-					We build interactive web experiences for your research. Conference companion apps, data
-					visualizations, interactive publications. Let your audience explore your work, not just
-					read about it.
+					Interactive experiences for your research. Conference companion apps and data visualizations
+					that let audiences explore your work, not just read it.
 				</p>
-				<ul class="capabilities">
-					<li>
-						<strong>Conference Companion Apps:</strong> Real-time mobile tools for your audience to use
-						during your talk.
-					</li>
-					<li>
-						<strong>Interactive White Papers:</strong> Web-based publications that bring static data to
-						life.
-					</li>
-					<li>
-						<strong>Grant Impact Tools:</strong> Public-facing educational sites to satisfy "Broader Impacts"
-						requirements.
-					</li>
+				<ul class="sub-fields">
+					<li>Conference Companion Apps</li>
+					<li>Interactive White Papers</li>
+					<li>Grant Impact Tools</li>
 				</ul>
+				<div class="project-feature">
+					<div class="feature-label">FEATURED PROJECT</div>
+					<a href="/lab/conference-app" class="project-link">
+						<span class="project-name">Conference Companion App</span>
+						<span class="arrow">→</span>
+					</a>
+				</div>
 			</div>
 		</section>
 
@@ -123,24 +118,21 @@
 			<div class="content">
 				<h3>AI integration and data strategy.</h3>
 				<p>
-					We help departments and researchers use AI tools responsibly. Curriculum audits, data
-					cleaning, staff training. Practical guidance from people who understand both the
-					technology and the pedagogy.
+					Practical guidance for departments and researchers. We help you integrate AI tools
+					responsibly through curriculum audits, data cleaning, and staff training.
 				</p>
-				<ul class="capabilities">
-					<li>
-						<strong>AI Curriculum Audits:</strong> We help you integrate AI into your program safely and
-						effectively.
-					</li>
-					<li>
-						<strong>Data Strategy:</strong> Professional cleaning and organization of your research or
-						student data.
-					</li>
-					<li>
-						<strong>Technical Workshops:</strong> Practical training for staff on using LLMs and data
-						tools.
-					</li>
+				<ul class="sub-fields">
+					<li>AI Curriculum Audits</li>
+					<li>Data Strategy</li>
+					<li>Technical Workshops</li>
 				</ul>
+				<div class="project-feature">
+					<div class="feature-label">FEATURED PROJECT</div>
+					<a href="/lab/teacher-scaffolding-practice" class="project-link">
+						<span class="project-name">Teacher Scaffolding Practice App</span>
+						<span class="arrow">→</span>
+					</a>
+				</div>
 			</div>
 		</section>
 	</div>
@@ -191,7 +183,7 @@
 
 	.label {
 		font-family: var(--font-mono);
-		font-size: 11px;
+		font-size: 14px;
 		text-transform: uppercase;
 		letter-spacing: 0.15em;
 		color: var(--foreground-200);
@@ -311,9 +303,88 @@
 		.service-item h3 {
 			font-size: 24px;
 		}
+	}
 
-		.capabilities {
-			grid-template-columns: 1fr;
-		}
+	.sub-fields {
+		list-style: none;
+		padding: 0;
+		margin-bottom: 32px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+
+	.sub-fields li {
+		font-family: var(--font-mono);
+		font-size: 12px;
+		color: var(--foreground-200);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.sub-fields li:not(:last-child)::after {
+		content: '|';
+		margin-left: 12px;
+		opacity: 0.3;
+	}
+
+	.project-feature {
+		margin-bottom: 24px;
+		background: rgba(var(--foreground-rgb), 0.03);
+		padding: 24px;
+		border-left: 1px solid var(--accent);
+	}
+
+	.feature-label {
+		font-family: var(--font-mono);
+		font-size: 10px;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--foreground-200);
+		margin-bottom: 8px;
+	}
+
+	.project-link {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		text-decoration: none;
+		color: var(--foreground);
+		font-family: var(--font-mono);
+		font-size: 14px;
+		transition: color 0.3s;
+	}
+
+	.project-link:hover {
+		color: var(--accent);
+	}
+
+	.project-name {
+		font-weight: 600;
+	}
+
+	.arrow {
+		transition: transform 0.3s;
+	}
+
+	.project-link:hover .arrow {
+		transform: translateX(4px);
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+
+	.tag {
+		font-family: var(--font-mono);
+		font-size: 11px;
+		color: var(--accent);
+		background: rgba(var(--accent-rgb), 0.1);
+		padding: 4px 8px;
+		border-radius: 4px;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
 	}
 </style>

@@ -5,9 +5,6 @@ description: 'Exploring methods to ensure stable and reproducible classification
 author: 'Larry Grullon-Polanco'
 tags: ['LLM', 'Classification', 'Research']
 ---
-
-# LLM Consistency for Classification Tasks
-
 In the field of linguistics and education research, classification is a fundamental task. Whether it's tagging discourse moves or identifying grammatical errors, consistency is key. When using Large Language Models (LLMs) for these tasks, we encounter a significant challenge: non-determinism.
 
 ## The Problem

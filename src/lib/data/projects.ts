@@ -18,11 +18,11 @@ export const projects: Project[] = [
 	{
 		slug: 'taped-chinese',
 		title: 'Taped Chinese',
-		description: 'A modern web-based language learning platform digitizing FSI course materials with a vintage cassette aesthetic.',
+		description: 'A web-based language learning platform digitizing FSI course materials with a vintage cassette aesthetic.',
 		longDescription: 'Standard Chinese Platform transforms the comprehensive FSI course (originally used to train diplomats) into an accessible, interactive format for modern learners. The platform preserves the original 9-module structure while adding interactive features and a user-friendly interface.',
 		tags: ['Education Software', 'Web App', 'SvelteKit'],
 		year: '2025',
-		client: 'Internal Product',
+		client: '',
 		media: [
 			{ type: 'image', url: '/images/taped-chinese.webp', alt: 'Taped Chinese Interface' }
 		],

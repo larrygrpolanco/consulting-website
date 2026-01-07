@@ -38,7 +38,7 @@
 			<p>
 				<strong>차원 Chaone Labs</strong> is a research and development studio for language education
 				and linguistics. We build custom software—research tools, learning apps, and interactive websites.
-				Run by applied linguists who code.
+				Run by applied linguists and educators who understand technologies.
 			</p>
 		</div>
 	</section>
@@ -58,7 +58,7 @@
 				<h3 class="member-name">Jihye Kim, Ph.D.</h3>
 				<p class="member-role">Cofounder & Research Director</p>
 				<p class="member-desc">
-					Lead Researcher ensuring every tool is grounded in current pedagogical theory and
+					Lead Researcher ensuring every thing we do is grounded in current pedagogical theory and
 					qualitative rigor.
 				</p>
 			</div>
@@ -70,12 +70,12 @@
 		<div class="content">
 			<p>
 				Most research and teaching software is built by people who don't do research or teaching.
-				They build what they think you need, not what you actually need.
+				They build what they think we need, not what we actually need.
 			</p>
 			<br />
 			<p>
-				We're applied linguists who learned to code because we were tired of fighting with software
-				that didn't understand our work. Now we build tools for other researchers and educators.
+				We're applied linguists who believe in the power of technology to transform education and
+				research. We custom build tools for people and their needs.
 			</p>
 			<br />
 			<p>Our software is specific, transparent, and built to last.</p>
@@ -86,8 +86,8 @@
 		<h2 class="label">CONNECT</h2>
 		<div class="content">
 			<p>
-				For business inquiries, email us at <a href="mailto:larry@kyeollab.io" class="accent"
-					>larry@kyeollab.io</a
+				For inquiries, please <a href="mailto:larrygrpolanco@gmail.com" class="accent"
+					>email me</a
 				>
 			</p>
 		</div>
@@ -164,6 +164,7 @@
 	.accent {
 		color: var(--accent);
 		font-weight: 600;
+
 	}
 
 	.socials {

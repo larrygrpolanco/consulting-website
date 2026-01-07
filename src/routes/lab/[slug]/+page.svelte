@@ -1,12 +1,51 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { projects } from '$lib/data/projects';
+	import { tick } from 'svelte';
+	import { gsap } from 'gsap';
 
 	const slug = $derived(page.params.slug);
 	const project = $derived(projects.find((p) => p.slug === slug));
 	const nextProject = $derived(
 		projects[(projects.findIndex((p) => p.slug === slug) + 1) % projects.length]
 	);
+
+	let heroRef: HTMLElement;
+
+	$effect(() => {
+		if (project) {
+			animateIn();
+		}
+	});
+
+	async function animateIn() {
+		await tick();
+		if (!heroRef) return;
+		
+		gsap.context(() => {
+			const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+			tl.fromTo('.headline',
+				{ y: 40, opacity: 0 },
+				{ y: 0, opacity: 1, duration: 0.8 }
+			)
+			.fromTo('.sub-headline',
+				{ y: 20, opacity: 0 },
+				{ y: 0, opacity: 1, duration: 0.6 },
+				'-=0.4'
+			)
+			.fromTo('.description',
+				{ y: 20, opacity: 0 },
+				{ y: 0, opacity: 1, duration: 0.6 },
+				'-=0.4'
+			)
+			.fromTo('.cta-group .btn-lab',
+				{ y: 20, opacity: 0 },
+				{ y: 0, opacity: 1, duration: 0.6, stagger: 0.1 },
+				'-=0.3'
+			);
+		}, heroRef);
+	}
 </script>
 
 <svelte:head>
@@ -18,26 +57,28 @@
 </svelte:head>
 
 {#if project}
-	<main class="project-lab-detail">
+	<main class="project-lab-detail" bind:this={heroRef}>
 		<header class="project-lab-hero">
-			<h1>{project.title}</h1>
-			<p class="project-lab-lead">{project.description}</p>
+			<h1 class="headline">{project.title}</h1>
+			<p class="project-lab-lead sub-headline">{project.description}</p>
 		</header>
 
 		<div class="project-lab-main">
 			<div class="project-lab-content">
-				<section class="project-lab-description">
+				<section class="project-lab-description description">
 					<p>{project.longDescription}</p>
 				</section>
 
 				<section class="project-lab-gallery">
 					{#each project.media as item}
 						<div class="gallery-lab-item">
-							{#if item.type === 'image'}
-								<img src={item.url} alt={item.alt || project.title} loading="lazy" />
-							{:else}
-								<video src={item.url} autoplay loop muted playsinline></video>
-							{/if}
+							<a href={project.website || '#'} target={project.website ? "_blank" : undefined} rel={project.website ? "noopener noreferrer" : undefined} class="media-link">
+								{#if item.type === 'image'}
+									<img src={item.url} alt={item.alt || project.title} loading="lazy" />
+								{:else}
+									<video src={item.url} autoplay loop muted playsinline></video>
+								{/if}
+							</a>
 						</div>
 					{/each}
 				</section>
@@ -56,15 +97,11 @@
 					<span class="sidebar-label">Year</span>
 					<span class="sidebar-value">{project.year}</span>
 				</div>
-				<div class="sidebar-section">
-					<span class="sidebar-label">Client</span>
-					<span class="sidebar-value">{project.client}</span>
-				</div>
-				<div class="sidebar-section">
-					<span class="sidebar-label">Status</span>
-					<span class="sidebar-value">Completed / Open Source</span>
-				</div>
-				<div class="sidebar-footer" style="padding-top: 20px; border-top: 1px solid rgba(0,33,71,0.1); margin-top: 20px;">
+				
+				<div class="sidebar-footer cta-group" style="padding-top: 20px; border-top: 1px solid rgba(0,33,71,0.1); margin-top: 20px; display: flex; flex-direction: column; gap: 12px;">
+					{#if project.website}
+						<a href={project.website} target="_blank" rel="noopener noreferrer" class="btn-lab" style="width: 100%; justify-content: center;">VIEW PROJECT</a>
+					{/if}
 					<a href="/lab" class="btn-lab" style="width: 100%; justify-content: center;">BACK TO LAB</a>
 				</div>
 			</aside>
@@ -94,6 +131,37 @@
 		scroll-snap-type: none;
 	}
 
+	.headline, .sub-headline, .description, .cta-group .btn-lab {
+		opacity: 0;
+	}
+
+	.gallery-lab-item {
+		overflow: hidden;
+		background: rgba(var(--foreground-rgb), 0.05);
+		margin-bottom: 1rem;
+	}
+
+	.media-link {
+		display: block;
+		width: 100%;
+		height: 100%;
+		text-decoration: none;
+	}
+
+	.gallery-lab-item img,
+	.gallery-lab-item video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.5s ease;
+		display: block;
+	}
+
+	.gallery-lab-item:hover img,
+	.gallery-lab-item:hover video {
+		transform: scale(1.02);
+	}
+
 	.next-project-title {
 		font-size: clamp(24px, 4vw, 48px);
 		font-family: var(--font-serif);
@@ -112,6 +180,6 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		gap: 2rem;
+		gap: 1rem;
 	}
 </style>
