@@ -176,7 +176,7 @@
 	}
 
 	.headline {
-		font-size: clamp(40px, 5vw, 64px);
+		font-size: clamp(64px, 5vw, 64px);
 		line-height: 1.1;
 		margin-bottom: 32px;
 		font-weight: 700;

@@ -29,7 +29,7 @@
 		
 		<!-- Links on Right -->
 		<div class="nav-links">
-			<a href="/work" class="nav-link">work</a>
+			<a href="/lab" class="nav-link">lab</a>
 			<a href="/services" class="nav-link">services</a>
 			<a href="/blog" class="nav-link">blog</a>
 			<a href="/about" class="nav-link">about</a>

@@ -87,7 +87,7 @@
 	}
 
 	.blog-header h1 {
-		font-size: clamp(40px, 6vw, 80px);
+		font-size: clamp(64px, 6vw, 80px);
 		margin-bottom: 40px;
 	}
 

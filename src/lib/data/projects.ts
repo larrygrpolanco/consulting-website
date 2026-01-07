@@ -11,32 +11,22 @@ export interface Project {
 		url: string;
 		alt?: string;
 	}[];
+	website?: string;
 }
 
 export const projects: Project[] = [
-	// {
-	// 	slug: 'sabr-genre-analysis',
-	// 	title: 'SABR / Genre Analysis Tool',
-	// 	description: 'Automating qualitative coding frameworks with high human agreement.',
-	// 	longDescription: 'How we automated a manual coding framework (Genre Analysis "Moves & Steps") to reach 78% human agreement using custom Python/LLM workflows.',
-	// 	tags: ['Research Instrumentation', 'NLP', 'Python'],
-	// 	year: '2024',
-	// 	client: 'University Research Lab',
-	// 	media: [
-	// 		{ type: 'image', url: '/projects/sabr/1.webp', alt: 'SABR Tool Interface' }
-	// 	]
-	// },
 	{
 		slug: 'taped-chinese',
 		title: 'Taped Chinese',
 		description: 'A modern web-based language learning platform digitizing FSI course materials with a vintage cassette aesthetic.',
 		longDescription: 'Standard Chinese Platform transforms the comprehensive FSI course (originally used to train diplomats) into an accessible, interactive format for modern learners. The platform preserves the original 9-module structure while adding interactive features and a user-friendly interface.',
 		tags: ['Education Software', 'Web App', 'SvelteKit'],
-		year: '2024',
+		year: '2025',
 		client: 'Internal Product',
 		media: [
 			{ type: 'image', url: '/images/taped-chinese.webp', alt: 'Taped Chinese Interface' }
-		]
+		],
+		website: 'https://tapedchinese.com'
 	},
 	{
 		slug: 'fulbright-planner',
@@ -44,10 +34,23 @@ export const projects: Project[] = [
 		description: 'Reducing lesson planning time using structured AI prompting.',
 		longDescription: 'A tool designed for educators to reduce weekly lesson planning time by up to 4 hours through structured, pedagogically-sound AI prompt engineering.',
 		tags: ['Bespoke Ed Software', 'Productivity', 'LLM'],
-		year: '2023',
+		year: '2025',
 		client: 'Fulbright Program',
 		media: [
 			{ type: 'image', url: '/images/fulbright-planner.webp', alt: 'Fulbright Planner UI' }
+		],
+		website: 'https://fulbright-planner.com'
+	},
+	{
+		slug: 'sabr-genre-analysis',
+		title: 'SABR / Genre Analysis Tool',
+		description: 'Automating qualitative coding frameworks with high human agreement.',
+		longDescription: 'How we automated a manual coding framework (Genre Analysis "Moves & Steps") to reach 78% human agreement using custom Python/LLM workflows.',
+		tags: ['Research Instrumentation', 'NLP', 'Python'],
+		year: '2024',
+		client: 'University Research Lab',
+		media: [
+			{ type: 'image', url: '/projects/sabr/1.webp', alt: 'SABR Tool Interface' }
 		]
 	},
 	{

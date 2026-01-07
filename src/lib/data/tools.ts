@@ -30,7 +30,8 @@ export const tools: Tool[] = [
 		tags: ['Web', 'SvelteKit', 'Education'],
 		year: '2024',
 		status: 'live',
-		repository: 'https://github.com/larrygrpolanco',
+		repository: 'https://github.com/larrygrpolanco/eta-lesson-planner',
+		liveUrl: 'https://fulbright-lesson-planner.vercel.app',
 		license: 'MIT',
 		media: [
 			{

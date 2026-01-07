@@ -44,7 +44,7 @@
 	<div class="header">
 		<h1 class="headline">CHAONE LABS</h1>
 		<h2 class="sub-headline">We build software for language researchers and educators.</h2>
-		<p class="description">Custom research tools, educational apps, and interactive websites—built by applied linguists who code.</p>
+		<p class="description">Custom research tools, educational apps, and interactive websites built by applied linguists.</p>
 	</div>
 
 	<div class="cta-group">

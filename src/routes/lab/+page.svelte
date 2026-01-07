@@ -8,12 +8,18 @@
 	let currentTab = $state('studio'); // 'studio' | 'tools'
 	let ctx: gsap.Context;
 
+	let isInitialLoad = true;
+
 	$effect(() => {
 		// Re-run animation when tab changes
 		const _ = currentTab; // Dependency
 
-		if (ctx) ctx.revert();
-		animateIn();
+		if (isInitialLoad) {
+			animateInitial();
+			isInitialLoad = false;
+		} else {
+			animateTabChange();
+		}
 
 		return () => {
 			if (ctx) ctx.revert();
@@ -25,40 +31,56 @@
 		currentTab = tab;
 	}
 
-	async function animateIn() {
+	async function animateInitial() {
 		await tick();
-
 		if (!workRef) return;
 
+		if (ctx) ctx.revert();
 		ctx = gsap.context(() => {
 			const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
 			tl.from('.work-header', {
-				y: 40,
+				y: 30,
 				opacity: 0,
 				duration: 0.8
 			}).from(
 				'.project-item',
 				{
-					y: 40,
+					y: 30,
 					opacity: 0,
-					duration: 0.8,
-					stagger: 0.2,
+					duration: 0.6,
+					stagger: 0.1,
 					clearProps: 'all'
 				},
-				'-=0.6'
+				'-=0.4'
 			);
 		}, workRef);
+	}
+
+	async function animateTabChange() {
+		await tick();
+		if (!workRef) return;
+
+		// We don't revert ctx here because we want to keep the header as is
+		// but we might need to handle the new items
+		gsap.from('.project-item', {
+			y: 20,
+			opacity: 0,
+			duration: 0.5,
+			stagger: 0.1,
+			ease: 'power2.out',
+			clearProps: 'all'
+		});
 	}
 </script>
 
 <svelte:head>
-	<title>Work | 차원 Chaone Labs</title>
+	<title>Lab | 차원 Chaone Labs</title>
 </svelte:head>
 
 <main bind:this={workRef} class="work-container">
 	<header class="work-header">
-		<h1 class="headline">Work</h1>
+		<h1 class="headline">Lab</h1>
 		<div class="tab-selector">
 			<button
 				class="tab-btn {currentTab === 'studio' ? 'active' : ''}"
@@ -66,7 +88,7 @@
 				role="tab"
 				aria-selected={currentTab === 'studio'}
 			>
-				Studio
+				Projects
 			</button>
 			<button
 				class="tab-btn {currentTab === 'tools' ? 'active' : ''}"
@@ -74,12 +96,11 @@
 				role="tab"
 				aria-selected={currentTab === 'tools'}
 			>
-				Tools
+				Open Source Tools
 			</button>
 		</div>
 		<p class="sub-headline">
-			Client work, research collaborations, and experiments. Check out our open-source tools in the
-			Tools tab.
+			Selected works, research collaborations, and experiments. Check out our open-source tools.
 		</p>
 	</header>
 
@@ -98,18 +119,25 @@
 						</div>
 
 						<div class="project-main">
-							<div class="project-media">
-								{#if project.media[0].type === 'image'}
-									<img src={project.media[0].url} alt={project.media[0].alt || project.title} />
-								{:else}
-									<video src={project.media[0].url} autoplay loop muted playsinline></video>
-								{/if}
-							</div>
+							<a href={project.website || `/lab/${project.slug}`} target={project.website ? "_blank" : undefined} rel={project.website ? "noopener noreferrer" : undefined} class="project-media-link">
+								<div class="project-media">
+									{#if project.media[0].type === 'image'}
+										<img src={project.media[0].url} alt={project.media[0].alt || project.title} />
+									{:else}
+										<video src={project.media[0].url} autoplay loop muted playsinline></video>
+									{/if}
+								</div>
+							</a>
 
 							<div class="project-content">
 								<h2 class="project-title">{project.title}</h2>
 								<p class="project-description">{project.description}</p>
-								<a href="/work/{project.slug}" class="view-project">View Case Study</a>
+								<div class="tool-actions">
+									{#if project.website}
+										<a href={project.website} target="_blank" rel="noopener noreferrer" class="view-project">View Project</a>
+									{/if}
+									<a href="/lab/{project.slug}" class="view-project">Details</a>
+								</div>
 							</div>
 						</div>
 					</article>
@@ -127,13 +155,15 @@
 						</div>
 
 						<div class="project-main">
-							<div class="project-media">
-								{#if tool.media[0].type === 'image'}
-									<img src={tool.media[0].url} alt={tool.media[0].alt || tool.title} />
-								{:else}
-									<video src={tool.media[0].url} autoplay loop muted playsinline></video>
-								{/if}
-							</div>
+							<a href={tool.liveUrl || tool.repository || `/lab/${tool.slug}`} target={(tool.liveUrl || tool.repository) ? "_blank" : undefined} rel={(tool.liveUrl || tool.repository) ? "noopener noreferrer" : undefined} class="project-media-link">
+								<div class="project-media">
+									{#if tool.media[0].type === 'image'}
+										<img src={tool.media[0].url} alt={tool.media[0].alt || tool.title} />
+									{:else}
+										<video src={tool.media[0].url} autoplay loop muted playsinline></video>
+									{/if}
+								</div>
+							</a>
 
 							<div class="project-content">
 								<h2 class="project-title">{tool.title}</h2>
@@ -144,15 +174,7 @@
 											href={tool.repository}
 											target="_blank"
 											rel="noopener noreferrer"
-											class="view-project">GitHub</a
-										>
-									{/if}
-									{#if tool.downloadUrl}
-										<a
-											href={tool.downloadUrl}
-											target="_blank"
-											rel="noopener noreferrer"
-											class="view-project">Download</a
+											class="view-project">Github Repo</a
 										>
 									{/if}
 									{#if tool.liveUrl}
@@ -160,7 +182,7 @@
 											href={tool.liveUrl}
 											target="_blank"
 											rel="noopener noreferrer"
-											class="view-project">Try It</a
+											class="view-project">View Tool</a
 										>
 									{/if}
 								</div>
@@ -180,7 +202,7 @@
 		padding: 40px 5vw 100px;
 		display: flex;
 		flex-direction: column;
-		gap: 80px;
+		gap: 40px;
 	}
 
 	.work-header {
@@ -191,7 +213,7 @@
 	}
 
 	.headline {
-		font-size: clamp(40px, 5vw, 64px);
+		font-size: clamp(64px, 5vw, 64px);
 		line-height: 1.1;
 		font-weight: 700;
 	}
@@ -247,7 +269,7 @@
 
 	.label {
 		font-family: var(--font-mono);
-		font-size: 11px;
+		font-size: 12px;
 		text-transform: uppercase;
 		letter-spacing: 0.15em;
 		color: var(--foreground-200);
@@ -273,6 +295,11 @@
 		display: flex;
 		flex-direction: column;
 		gap: 32px;
+	}
+
+	.project-media-link {
+		display: block;
+		text-decoration: none;
 	}
 
 	.project-media {
