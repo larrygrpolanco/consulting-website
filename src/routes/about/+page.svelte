@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Nav from '$lib/components/Nav.svelte';
 	import { tick } from 'svelte';
 	import { gsap } from 'gsap';
 
@@ -14,11 +13,12 @@
 		gsap.context(() => {
 			const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-			tl.fromTo('.section',
+			tl.fromTo(
+				'.section',
 				{ y: 40, opacity: 0 },
 				{ y: 0, opacity: 1, duration: 0.8, stagger: 0.2 }
-			)
-			.fromTo('.socials a',
+			).fromTo(
+				'.socials a',
 				{ y: 20, opacity: 0 },
 				{ y: 0, opacity: 1, duration: 0.6, stagger: 0.1 },
 				'-=0.4'
@@ -31,14 +31,14 @@
 	<title>About | 차원 Chaone Labs</title>
 </svelte:head>
 
-<Nav />
-
 <main bind:this={aboutRef} class="about-container">
 	<section class="section section-bio">
 		<h2 class="label">BIO</h2>
 		<div class="content">
 			<p>
-				<strong>차원 Chaone Labs</strong> is a research and development studio for language education and linguistics. We build custom software—research tools, learning apps, and interactive websites. Run by applied linguists who code.
+				<strong>차원 Chaone Labs</strong> is a research and development studio for language education
+				and linguistics. We build custom software—research tools, learning apps, and interactive websites.
+				Run by applied linguists who code.
 			</p>
 		</div>
 	</section>
@@ -50,14 +50,16 @@
 				<h3 class="member-name">Larry Grullon-Polanco, M.A.</h3>
 				<p class="member-role">Cofounder & Lead Engineer</p>
 				<p class="member-desc">
-					Applied Linguist & Engineer specializing in the intersection of Discourse Analysis, LLMs, and Full-Stack Development.
+					Applied Linguist & Engineer specializing in the intersection of Discourse Analysis, LLMs,
+					and Full-Stack Development.
 				</p>
 			</div>
 			<div class="member">
-				<h3 class="member-name">[Partner Name], Ph.D.</h3>
+				<h3 class="member-name">Jihye Kim, Ph.D.</h3>
 				<p class="member-role">Cofounder & Research Director</p>
 				<p class="member-desc">
-					Lead Researcher ensuring every tool is grounded in current pedagogical theory and qualitative rigor.
+					Lead Researcher ensuring every tool is grounded in current pedagogical theory and
+					qualitative rigor.
 				</p>
 			</div>
 		</div>
@@ -67,23 +69,27 @@
 		<h2 class="label">WHY WE EXIST</h2>
 		<div class="content">
 			<p>
-				Most research and teaching software is built by people who don't do research or teaching. They build what they think you need, not what you actually need.
+				Most research and teaching software is built by people who don't do research or teaching.
+				They build what they think you need, not what you actually need.
 			</p>
 			<br />
 			<p>
-				We're applied linguists who learned to code because we were tired of fighting with software that didn't understand our work. Now we build tools for other researchers and educators.
+				We're applied linguists who learned to code because we were tired of fighting with software
+				that didn't understand our work. Now we build tools for other researchers and educators.
 			</p>
 			<br />
-			<p>
-				Our software is specific, transparent, and built to last.
-			</p>
+			<p>Our software is specific, transparent, and built to last.</p>
 		</div>
 	</section>
 
 	<section class="section section-connect">
 		<h2 class="label">CONNECT</h2>
 		<div class="content">
-			<p>For business inquiries, email us at <a href="mailto:larry@kyeollab.io" class="accent">larry@kyeollab.io</a></p>
+			<p>
+				For business inquiries, email us at <a href="mailto:larry@kyeollab.io" class="accent"
+					>larry@kyeollab.io</a
+				>
+			</p>
 		</div>
 	</section>
 
@@ -98,7 +104,7 @@
 	.about-container {
 		max-width: 1200px;
 		margin: 0 auto;
-		padding: 160px 5vw 100px;
+		padding: 40px 5vw 100px;
 		display: flex;
 		flex-direction: column;
 		gap: 80px;
@@ -113,7 +119,7 @@
 
 	.label {
 		font-family: var(--font-mono);
-		font-size: 11px;
+		font-size: 14px;
 		text-transform: uppercase;
 		letter-spacing: 0.15em;
 		color: var(--foreground-200);

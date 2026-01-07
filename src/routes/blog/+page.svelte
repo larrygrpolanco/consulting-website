@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Nav from '$lib/components/Nav.svelte';
 	import { tick } from 'svelte';
 	import { gsap } from 'gsap';
 
@@ -31,8 +30,6 @@
 <svelte:head>
 	<title>Blog | 차원 Chaone Labs</title>
 </svelte:head>
-
-<Nav />
 
 <main bind:this={blogRef} class="blog-container">
 	<header class="blog-header">
@@ -180,4 +177,3 @@
 		}
 	}
 </style>
-

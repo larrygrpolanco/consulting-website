@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { projects } from '$lib/data/projects';
-	import Nav from '$lib/components/Nav.svelte';
 
 	const slug = $derived(page.params.slug);
 	const project = $derived(projects.find((p) => p.slug === slug));
@@ -17,8 +16,6 @@
 		<title>Project Not Found | Chaone Labs</title>
 	{/if}
 </svelte:head>
-
-<Nav />
 
 {#if project}
 	<main class="project-lab-detail">

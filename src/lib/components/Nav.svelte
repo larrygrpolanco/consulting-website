@@ -1,26 +1,34 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { gsap } from 'gsap';
+	import logo from '$lib/assets/logo.png';
+	let { y } = $state({ y: 0 });
+	let lastY = 0;
+	let visible = $state(true);
 
-	let navRef: HTMLElement;
-
-	onMount(() => {
-		gsap.fromTo(navRef, 
-			{ y: -20, opacity: 0 },
-			{ y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
-		);
-	});
+	function handleScroll() {
+		const currentY = window.scrollY;
+		if (currentY > lastY && currentY > 50) {
+			visible = false;
+		} else {
+			visible = true;
+		}
+		lastY = currentY;
+	}
 </script>
 
-<nav bind:this={navRef} class="nav">
+<svelte:window onscroll={handleScroll} />
+
+<nav class="nav" class:hidden={!visible} aria-label="Main Navigation">
 	<div class="nav-inner">
+		<!-- Logo on Left -->
 		<div class="nav-logo">
-			<a href="/">
-				<span class="logo-text">차원 Chaone Labs</span>
+			<a href="/" aria-label="Home" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+				<img src={logo} alt="Chaone Labs Logo" class="logo-img" />
+				<span class="logo-text"></span>
 			</a>
 		</div>
 		
-		<div class="nav-links text-sans">
+		<!-- Links on Right -->
+		<div class="nav-links">
 			<a href="/work" class="nav-link">work</a>
 			<a href="/services" class="nav-link">services</a>
 			<a href="/blog" class="nav-link">blog</a>
@@ -32,50 +40,73 @@
 
 <style>
 	.nav {
-		position: fixed;
+		position: sticky;
 		top: 0;
-		left: 0;
 		width: 100%;
-		padding: 40px 5vw;
+		padding: 24px 5vw;
 		z-index: 1000;
-		pointer-events: none;
-		opacity: 0;
+		background: rgba(245, 245, 240, 0.9);
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+		/* border-bottom: 1px solid rgba(0, 33, 71, 0.05); */
+		transition: transform 0.3s ease-in-out;
+	}
+
+	.nav.hidden {
+		transform: translateY(-100%);
 	}
 
 	.nav-inner {
 		width: 100%;
+		max-width: 1400px;
+		margin: 0 auto;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
+		align-items: flex-start; /* Logo top aligned or center? User said "top to bottom" for sites. */
+	}
+
+	.nav-logo {
+		display: flex;
+		flex-direction: row;
 		align-items: center;
-		pointer-events: auto;
+		gap: 12px;
+	}
+
+	.logo-img {
+		height: 96px; 
+		width: auto;
+		display: block;
+		transition: height 0.3s ease;
 	}
 
 	.logo-text {
-		font-family: var(--font-serif);
-		font-weight: 900;
-		font-size: 24px;
-		letter-spacing: -0.02em;
+		font-family: var(--font-sans);
+		font-size: 32px; 
+		font-weight: 600;
 		color: var(--foreground);
-		text-decoration: none;
+		letter-spacing: -0.02em;
 	}
 
 	.nav-links {
 		display: flex;
-		flex-direction: row;
-		gap: 24px;
-		font-size: 11px;
-		text-transform: uppercase;
-		letter-spacing: 0.15em;
-		font-weight: 500;
-		align-items: center;
+		flex-direction: column; /* Vertical stack */
+		gap: 8px; 
+		align-items: flex-end; /* Align to right */
+		text-align: right;
 	}
 
 	.nav-link {
+		font-family: var(--font-sans);
+		font-size: 15px; /* Increased size (13 -> 15) */
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		font-weight: 600;
 		color: var(--foreground-200);
 		text-decoration: none;
-		transition: color 0.3s, transform 0.3s;
-		width: fit-content;
+		transition: color 0.2s ease-out;
+		display: block;
+		padding: 4px 0;
 	}
 
 	.nav-link:hover {
@@ -84,5 +115,23 @@
 
 	.contact-link {
 		color: var(--accent);
+	}
+
+	@media (max-width: 768px) {
+		.nav {
+			padding: 20px 5vw;
+		}
+
+		.nav-inner {
+			align-items: flex-start;
+		}
+
+		.logo-text {
+			display: none; /* Disappear on smaller screens */
+		}
+
+		.logo-img {
+			height: 96px; /* Logo gets bigger on mobile per request */
+		}
 	}
 </style>

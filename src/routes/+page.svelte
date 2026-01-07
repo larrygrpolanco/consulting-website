@@ -1,14 +1,12 @@
 <script lang="ts">
-	import Nav from '$lib/components/Nav.svelte';
 	import Hero from '$lib/components/Hero.svelte';
 </script>
 
 <svelte:head>
-	<title>Consulting Website | Strategic Digital Partner</title>
+	<title>Home | 차원 Chaone Labs</title>
 </svelte:head>
 
 <main>
-	<Nav />
 	<Hero show={true} />
 </main>
 

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Nav from '$lib/components/Nav.svelte';
 	import { tick } from 'svelte';
 	import { gsap } from 'gsap';
 
@@ -14,20 +13,19 @@
 		gsap.context(() => {
 			const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-			tl.fromTo('.hero-section',
-				{ y: 40, opacity: 0 },
-				{ y: 0, opacity: 1, duration: 0.8 }
-			)
-			.fromTo('.service-item',
-				{ y: 40, opacity: 0 },
-				{ y: 0, opacity: 1, duration: 0.8, stagger: 0.2 },
-				'-=0.4'
-			)
-			.fromTo('.philosophy-section',
-				{ y: 20, opacity: 0 },
-				{ y: 0, opacity: 1, duration: 0.6 },
-				'-=0.4'
-			);
+			tl.fromTo('.hero-section', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 })
+				.fromTo(
+					'.service-item',
+					{ y: 40, opacity: 0 },
+					{ y: 0, opacity: 1, duration: 0.8, stagger: 0.2 },
+					'-=0.4'
+				)
+				.fromTo(
+					'.philosophy-section',
+					{ y: 20, opacity: 0 },
+					{ y: 0, opacity: 1, duration: 0.6 },
+					'-=0.4'
+				);
 		}, servicesRef);
 	}
 </script>
@@ -36,13 +34,12 @@
 	<title>Services | 차원 Chaone Labs</title>
 </svelte:head>
 
-<Nav />
-
 <main bind:this={servicesRef} class="services-container">
 	<section class="hero-section">
 		<h1 class="headline">What We Build</h1>
 		<p class="sub-headline">
-			Software for language research and education. We turn your ideas into working tools—research pipelines, learning apps, interactive websites.
+			Software for language research and education. We turn your ideas into working tools—research
+			pipelines, learning apps, interactive websites.
 		</p>
 	</section>
 
@@ -52,12 +49,20 @@
 			<div class="content">
 				<h3>Custom software for qualitative analysis.</h3>
 				<p>
-					We build tools that automate your coding schemes. Genre analysis, discourse tracking, move-step coding—whatever your methodology requires. We turn manual processes into reproducible pipelines.
+					We build tools that automate your coding schemes. Genre analysis, discourse tracking,
+					move-step coding—whatever your methodology requires. We turn manual processes into
+					reproducible pipelines.
 				</p>
 				<ul class="capabilities">
-					<li><strong>Custom Analysis Scripts:</strong> Turn your manual coding schemes into automated workflows.</li>
-					<li><strong>Data Cleaning:</strong> We prepare messy, large-scale datasets for serious analysis.</li>
-					<li><strong>Methodology Sandboxes:</strong> Test your theories on real data before you publish.</li>
+					<li>
+						<strong>Custom Analysis Scripts:</strong> Turn your manual coding schemes into automated workflows.
+					</li>
+					<li>
+						<strong>Data Cleaning:</strong> We prepare messy, large-scale datasets for serious analysis.
+					</li>
+					<li>
+						<strong>Methodology Sandboxes:</strong> Test your theories on real data before you publish.
+					</li>
 				</ul>
 			</div>
 		</section>
@@ -67,12 +72,22 @@
 			<div class="content">
 				<h3>Learning apps built for your curriculum.</h3>
 				<p>
-					We build custom practice apps for language classrooms. Vocabulary trainers, grammar exercises, interactive assessments—all aligned to your textbook and syllabus. No generic content.
+					We build custom practice apps for language classrooms. Vocabulary trainers, grammar
+					exercises, interactive assessments—all aligned to your textbook and syllabus. No generic
+					content.
 				</p>
 				<ul class="capabilities">
-					<li><strong>Curriculum Companions:</strong> Custom apps trained on your specific vocabulary and grammar lists.</li>
-					<li><strong>Interactive Assessments:</strong> AI-powered roleplays and simulations with strict pedagogical guardrails.</li>
-					<li><strong>Teacher Dashboards:</strong> See exactly where your students are struggling in real-time.</li>
+					<li>
+						<strong>Curriculum Companions:</strong> Custom apps trained on your specific vocabulary and
+						grammar lists.
+					</li>
+					<li>
+						<strong>Interactive Assessments:</strong> AI-powered roleplays and simulations with strict
+						pedagogical guardrails.
+					</li>
+					<li>
+						<strong>Teacher Dashboards:</strong> See exactly where your students are struggling in real-time.
+					</li>
 				</ul>
 			</div>
 		</section>
@@ -82,12 +97,23 @@
 			<div class="content">
 				<h3>Websites for research and conferences.</h3>
 				<p>
-					We build interactive web experiences for your research. Conference companion apps, data visualizations, interactive publications. Let your audience explore your work, not just read about it.
+					We build interactive web experiences for your research. Conference companion apps, data
+					visualizations, interactive publications. Let your audience explore your work, not just
+					read about it.
 				</p>
 				<ul class="capabilities">
-					<li><strong>Conference Companion Apps:</strong> Real-time mobile tools for your audience to use during your talk.</li>
-					<li><strong>Interactive White Papers:</strong> Web-based publications that bring static data to life.</li>
-					<li><strong>Grant Impact Tools:</strong> Public-facing educational sites to satisfy "Broader Impacts" requirements.</li>
+					<li>
+						<strong>Conference Companion Apps:</strong> Real-time mobile tools for your audience to use
+						during your talk.
+					</li>
+					<li>
+						<strong>Interactive White Papers:</strong> Web-based publications that bring static data to
+						life.
+					</li>
+					<li>
+						<strong>Grant Impact Tools:</strong> Public-facing educational sites to satisfy "Broader Impacts"
+						requirements.
+					</li>
 				</ul>
 			</div>
 		</section>
@@ -97,12 +123,23 @@
 			<div class="content">
 				<h3>AI integration and data strategy.</h3>
 				<p>
-					We help departments and researchers use AI tools responsibly. Curriculum audits, data cleaning, staff training. Practical guidance from people who understand both the technology and the pedagogy.
+					We help departments and researchers use AI tools responsibly. Curriculum audits, data
+					cleaning, staff training. Practical guidance from people who understand both the
+					technology and the pedagogy.
 				</p>
 				<ul class="capabilities">
-					<li><strong>AI Curriculum Audits:</strong> We help you integrate AI into your program safely and effectively.</li>
-					<li><strong>Data Strategy:</strong> Professional cleaning and organization of your research or student data.</li>
-					<li><strong>Technical Workshops:</strong> Practical training for staff on using LLMs and data tools.</li>
+					<li>
+						<strong>AI Curriculum Audits:</strong> We help you integrate AI into your program safely and
+						effectively.
+					</li>
+					<li>
+						<strong>Data Strategy:</strong> Professional cleaning and organization of your research or
+						student data.
+					</li>
+					<li>
+						<strong>Technical Workshops:</strong> Practical training for staff on using LLMs and data
+						tools.
+					</li>
 				</ul>
 			</div>
 		</section>
@@ -112,7 +149,8 @@
 		<h2 class="label">PHILOSOPHY</h2>
 		<div class="content">
 			<blockquote class="philosophy-quote">
-				"We're researchers who learned to code. We build software that works the way you work—not software that forces you to adapt."
+				"We're researchers who learned to code. We build software that works the way you work—not
+				software that forces you to adapt."
 			</blockquote>
 		</div>
 	</section>
@@ -126,7 +164,7 @@
 	.services-container {
 		max-width: 1200px;
 		margin: 0 auto;
-		padding: 160px 5vw 100px;
+		padding: 40px 5vw 100px;
 		display: flex;
 		flex-direction: column;
 		gap: 120px;
@@ -244,7 +282,9 @@
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		font-size: 14px;
-		transition: transform 0.3s, background-color 0.3s;
+		transition:
+			transform 0.3s,
+			background-color 0.3s;
 	}
 
 	.cta-button:hover {
@@ -253,7 +293,8 @@
 	}
 
 	@media (max-width: 768px) {
-		.service-item, .philosophy-section {
+		.service-item,
+		.philosophy-section {
 			grid-template-columns: 1fr;
 			gap: 16px;
 		}

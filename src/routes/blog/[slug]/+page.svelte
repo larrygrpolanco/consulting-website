@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Nav from '$lib/components/Nav.svelte';
 	let { data } = $props();
 </script>
 
@@ -7,7 +6,7 @@
 	<title>{data.meta.title} | 차원 Chaone Labs</title>
 </svelte:head>
 
-<Nav />
+
 
 <main class="post-container">
 	<article class="post">
@@ -55,11 +54,13 @@
 <style>
 	.post-container {
 		max-width: 1200px;
+		width: 100%;
 		margin: 0 auto;
-		padding: 160px 5vw 100px;
+		padding: 40px 5vw 100px;
 		display: grid;
 		grid-template-columns: 1fr 250px;
 		gap: 80px;
+		overflow-x: hidden;
 	}
 
 	@media (max-width: 1024px) {

@@ -26,6 +26,11 @@
 				{ y: 0, opacity: 1, duration: 0.6 },
 				'-=0.4'
 			)
+			.fromTo('.description',
+				{ y: 20, opacity: 0 },
+				{ y: 0, opacity: 1, duration: 0.6 },
+				'-=0.4'
+			)
 			.fromTo('.cta-group .btn',
 				{ y: 20, opacity: 0 },
 				{ y: 0, opacity: 1, duration: 0.6, stagger: 0.1 },
@@ -37,8 +42,9 @@
 
 <section bind:this={heroRef} class="hero" class:visible={show}>
 	<div class="header">
-		<h1 class="headline">We build software for language researchers and educators.</h1>
-		<h2 class="sub-headline">Custom research tools, educational apps, and interactive websites—built by applied linguists who code.</h2>
+		<h1 class="headline">CHAONE LABS</h1>
+		<h2 class="sub-headline">We build software for language researchers and educators.</h2>
+		<p class="description">Custom research tools, educational apps, and interactive websites—built by applied linguists who code.</p>
 	</div>
 
 	<div class="cta-group">
@@ -51,15 +57,16 @@
 	.hero {
 		position: relative;
 		width: 100vw;
-		height: 100vh;
+		height: 70vh;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		padding: 8em 4em 4em 4em;
+		padding: 1em 4em 1em 4em;
 	}
 
 	.hero .headline,
 	.hero .sub-headline,
+	.hero .description,
 	.hero .cta-group .btn {
 		opacity: 0;
 	}
@@ -73,13 +80,19 @@
 	}
 
 	.sub-headline {
+		font-family: var(--font-serif);
+		font-size: clamp(24px, 4vw, 40px);
+		line-height: 1.2;
+		margin-bottom: 24px;
+		font-weight: 400;
+	}
+
+	.description {
 		font-family: var(--font-sans);
-		text-transform: uppercase;
-		font-weight: 600;
-		font-size: clamp(14px, 1.5vw, 18px);
-		letter-spacing: 0.1em;
-		color: var(--accent);
-		opacity: 0.8;
+		font-size: clamp(16px, 1.5vw, 20px);
+		color: var(--foreground-200);
+		line-height: 1.6;
+		max-width: 600px;
 	}
 
 	.cta-group {
