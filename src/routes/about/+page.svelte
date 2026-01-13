@@ -194,7 +194,7 @@
 		}
 
 		.about-container {
-			padding-top: 120px;
+			padding-top: 40px;
 			gap: 60px;
 		}
 	}

@@ -132,7 +132,7 @@
 
 	@media (max-width: 900px) {
 		.hero {
-			padding: 6em 2em 2em 2em;
+			padding: 2em 2em 2em 2em;
 		}
 
 		.cta-group {

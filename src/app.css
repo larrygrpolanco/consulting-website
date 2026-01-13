@@ -83,7 +83,7 @@ li {
 .lab-container {
 	max-width: 1400px;
 	margin: 0 auto;
-	padding: 160px 5vw 100px;
+	padding: 60px 5vw 100px;
 }
 
 .lab-header {
@@ -232,7 +232,7 @@ li {
 .project-lab-detail {
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 160px 5vw 100px;
+	padding: 60px 5vw 100px;
 }
 
 .project-lab-hero {

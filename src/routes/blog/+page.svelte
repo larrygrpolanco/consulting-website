@@ -66,7 +66,7 @@
 	.blog-container {
 		max-width: 1200px;
 		margin: 0 auto;
-		padding: 160px 5vw 100px;
+		padding: 60px 5vw 100px;
 		display: grid;
 		grid-template-columns: 350px 1fr;
 		gap: 80px;
@@ -81,7 +81,7 @@
 
 	.blog-header {
 		position: sticky;
-		top: 160px;
+		top: 40px;
 		height: fit-content;
 		opacity: 0;
 	}

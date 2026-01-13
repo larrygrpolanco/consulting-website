@@ -1,23 +1,8 @@
 <script lang="ts">
 	import logo from '$lib/assets/logo.png';
-	let { y } = $state({ y: 0 });
-	let lastY = 0;
-	let visible = $state(true);
-
-	function handleScroll() {
-		const currentY = window.scrollY;
-		if (currentY > lastY && currentY > 50) {
-			visible = false;
-		} else {
-			visible = true;
-		}
-		lastY = currentY;
-	}
 </script>
 
-<svelte:window onscroll={handleScroll} />
-
-<nav class="nav" class:hidden={!visible} aria-label="Main Navigation">
+<nav class="nav" aria-label="Main Navigation">
 	<div class="nav-inner">
 		<!-- Logo on Left -->
 		<div class="nav-logo">
@@ -40,8 +25,9 @@
 
 <style>
 	.nav {
-		position: sticky;
+		position: relative;
 		top: 0;
+		left: 0;
 		width: 100%;
 		padding: 24px 5vw;
 		z-index: 1000;
@@ -49,12 +35,8 @@
 		backdrop-filter: blur(12px);
 		-webkit-backdrop-filter: blur(12px);
 		/* border-bottom: 1px solid rgba(0, 33, 71, 0.05); */
-		transition: transform 0.3s ease-in-out;
 	}
 
-	.nav.hidden {
-		transform: translateY(-100%);
-	}
 
 	.nav-inner {
 		width: 100%;

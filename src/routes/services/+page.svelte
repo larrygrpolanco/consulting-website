@@ -292,7 +292,7 @@
 		}
 
 		.services-container {
-			padding-top: 120px;
+			padding-top: 40px;
 			gap: 80px;
 		}
 
