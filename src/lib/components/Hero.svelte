@@ -61,7 +61,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		padding: 1em 4em 1em 4em;
+		padding: 1em 5vw 1em 5vw;
 	}
 
 	.hero .headline,
@@ -132,7 +132,7 @@
 
 	@media (max-width: 900px) {
 		.hero {
-			padding: 2em 2em 2em 2em;
+			padding: 2em 5vw 2em 5vw;
 		}
 
 		.cta-group {
