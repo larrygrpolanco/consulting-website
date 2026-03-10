@@ -12,6 +12,7 @@ export interface Project {
 		alt?: string;
 	}[];
 	website?: string;
+	repository?: string;
 }
 
 export const projects: Project[] = [
@@ -42,39 +43,51 @@ export const projects: Project[] = [
 		website: 'https://fulbright-planner.com'
 	},
 	{
-		slug: 'sabr-genre-analysis',
-		title: 'SABR / Genre Analysis Tool',
-		description: 'Automating qualitative coding frameworks with high human agreement.',
-		longDescription: 'How we automated a manual coding framework (Genre Analysis "Moves & Steps") to reach 78% human agreement using custom Python/LLM workflows.',
-		tags: ['Research Instrumentation', 'NLP', 'Python'],
-		year: '2024',
-		client: 'University Research Lab',
+		slug: 'ita-trainer',
+		title: 'ITA Interactional Competence Trainer',
+		description: "A voice-based practice tool for international teaching assistants to build classroom interactional skills with an AI student.",
+		longDescription: "Each activity isolates one interactional skill — managing turns, checking understanding, redirecting off-topic students, handling confusion — and wraps it in a tightly scoped roleplay scenario. The AI student's behavior is scripted to create the exact moment where that skill is needed. After the session, a separate LLM reviews the full transcript and returns coaching feedback: one strength, one next step, and a skill status. Built with Next.js, LiveKit, and the OpenAI Realtime API. Developed in active collaboration with applied linguistics researchers at USF.",
+		tags: ['Voice AI', 'Ed Tech', 'Next.js', 'LiveKit', 'Research Collab'],
+		year: '2025',
+		client: 'USF Research Lab',
 		media: [
-			{ type: 'image', url: '/projects/sabr/1.webp', alt: 'SABR Tool Interface' }
+			{ type: 'image', url: '/images/ita-trainer.webp', alt: 'ITA Trainer practice interface' }
 		]
 	},
 	{
-		slug: 'conference-app',
-		title: 'Conference Companion App',
-		description: 'Increasing audience engagement through real-time interaction.',
-		longDescription: 'Real-time web apps that allow conference audiences to interact with a speaker\'s data or models during a talk, turning static presentations into interactive experiences.',
-		tags: ['Interactive Dissemination', 'Real-time', 'WebSockets'],
-		year: '2024',
-		client: 'TESOL/AAAL presenters',
+		slug: 'korean-learning',
+		title: '한국어 학습 플랫폼',
+		description: 'A web platform supplementing the KLEAR Integrated Korean textbook series with LLM-powered interactive practice.',
+		longDescription: "Built for college-level Korean courses at USF in collaboration with Professor Jihye Kim. Each lesson maps to a textbook chapter and provides conversations and vocabulary in context, grammar conjugation tables and pattern explanations, and AI-powered roleplay scenarios for speaking practice. Students use the platform outside the classroom to reinforce what they're learning. Built with SvelteKit and deployed on Vercel.",
+		tags: ['Education Software', 'Web App', 'SvelteKit', 'LLM'],
+		year: '2025',
+		client: 'USF / Prof. Jihye Kim',
 		media: [
-			{ type: 'image', url: '/projects/conference-app/1.webp', alt: 'Conference App Interaction' }
+			{ type: 'image', url: '/images/korean-learning.webp', alt: 'Korean learning platform lesson view' }
 		]
 	},
 	{
-		slug: 'cancer-research-data',
-		title: 'Cancer Research Data Pipeline',
-		description: 'Managing large-scale, sensitive datasets with high fidelity.',
-		longDescription: 'Professional cleaning, organization, and harmonization of large-scale, sensitive cancer research datasets to prepare them for rigorous academic analysis.',
-		tags: ['Research Instrumentation', 'Data Engineering', 'Healthcare'],
-		year: '2023',
-		client: 'Medical Research Center',
+		slug: 'lin2002-grader',
+		title: 'LIN2002 Grading Assistant',
+		description: "An AI-powered essay grader that generates written feedback in the instructor's voice for a linguistics and film studies course.",
+		longDescription: "Students in LIN2002 write essays analyzing films and citing specific scenes with timestamps. This app grades those essays and generates feedback in the instructor's voice. Paste in a student essay, select the film module, click Grade. The app sends the essay to Gemini along with a system prompt, few-shot examples drawn from previously graded work, and the specific rubric — then returns a numerical score and a paragraph of written feedback ready to copy and send. Built with SvelteKit and Google Gemini.",
+		tags: ['AI Grading', 'SvelteKit', 'Gemini', 'Ed Tech'],
+		year: '2025',
+		client: 'USF Linguistics Dept.',
 		media: [
-			{ type: 'image', url: '/projects/cancer-research/1.webp', alt: 'Data Pipeline Visualization' }
+			{ type: 'image', url: '/images/lin2002-grader.webp', alt: 'LIN2002 grading assistant interface' }
+		]
+	},
+	{
+		slug: 'kpop-research-app',
+		title: 'K-Pop Accents Research Explorer',
+		description: 'A proof of concept for turning a published linguistics paper into an interactive web experience.',
+		longDescription: 'Built around the paper "I Want to Be Born with That Pronunciation": Metalinguistic Comments About K-Pop Idols\' Inner Circle Accents by Jihye Kim and Luoxiangyu Zhang. The app makes the research data explorable: browse and filter fan comments from the dataset, view idol profiles, watch the analyzed YouTube videos, and read plain-language explainers on the linguistic concepts. An experiment in using web affordances — filtering, search, linking — to make academic findings accessible without dumbing them down.',
+		tags: ['Research Dissemination', 'SvelteKit', 'Data Visualization', 'POC'],
+		year: '2024',
+		client: 'Research POC',
+		media: [
+			{ type: 'image', url: '/images/kpop-research-app.webp', alt: 'K-Pop accents research explorer' }
 		]
 	}
 ];

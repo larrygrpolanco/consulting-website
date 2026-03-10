@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { projects } from '$lib/data/projects';
+	import { tools } from '$lib/data/tools';
 	import { tick } from 'svelte';
 	import { gsap } from 'gsap';
 
 	const slug = $derived(page.params.slug);
 	const project = $derived(projects.find((p) => p.slug === slug));
+	const tool = $derived(project ? undefined : tools.find((t) => t.slug === slug));
 	const nextProject = $derived(
 		projects[(projects.findIndex((p) => p.slug === slug) + 1) % projects.length]
 	);
@@ -13,7 +15,7 @@
 	let heroRef: HTMLElement;
 
 	$effect(() => {
-		if (project) {
+		if (project || tool) {
 			animateIn();
 		}
 	});
@@ -21,7 +23,7 @@
 	async function animateIn() {
 		await tick();
 		if (!heroRef) return;
-		
+
 		gsap.context(() => {
 			const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
@@ -51,8 +53,10 @@
 <svelte:head>
 	{#if project}
 		<title>{project.title} | Chaone Labs</title>
+	{:else if tool}
+		<title>{tool.title} | Chaone Labs</title>
 	{:else}
-		<title>Project Not Found | Chaone Labs</title>
+		<title>Not Found | Chaone Labs</title>
 	{/if}
 </svelte:head>
 
@@ -97,10 +101,13 @@
 					<span class="sidebar-label">Year</span>
 					<span class="sidebar-value">{project.year}</span>
 				</div>
-				
+
 				<div class="sidebar-footer cta-group" style="padding-top: 20px; border-top: 1px solid rgba(0,33,71,0.1); margin-top: 20px; display: flex; flex-direction: column; gap: 12px;">
 					{#if project.website}
 						<a href={project.website} target="_blank" rel="noopener noreferrer" class="btn-lab" style="width: 100%; justify-content: center;">VIEW PROJECT</a>
+					{/if}
+					{#if project.repository}
+						<a href={project.repository} target="_blank" rel="noopener noreferrer" class="btn-lab" style="width: 100%; justify-content: center;">GITHUB REPO</a>
 					{/if}
 					<a href="/lab" class="btn-lab" style="width: 100%; justify-content: center;">BACK TO LAB</a>
 				</div>
@@ -108,9 +115,7 @@
 		</div>
 
 		<footer class="project-lab-nav">
-			<div class="nav-prev">
-				<!-- Could add prev project if needed -->
-			</div>
+			<div class="nav-prev"></div>
 			<div class="nav-next">
 				<span class="sidebar-label">Next Project</span>
 				<a href="/lab/{nextProject.slug}" class="next-project-title" style="display: block; margin-top: 8px;">
@@ -119,9 +124,57 @@
 			</div>
 		</footer>
 	</main>
+
+{:else if tool}
+	<main class="project-lab-detail" bind:this={heroRef}>
+		<header class="project-lab-hero">
+			<h1 class="headline">{tool.title}</h1>
+			<p class="project-lab-lead sub-headline">{tool.description}</p>
+		</header>
+
+		<div class="project-lab-main">
+			<div class="project-lab-content">
+				<section class="project-lab-description description">
+					<p>{tool.longDescription}</p>
+				</section>
+			</div>
+
+			<aside class="project-lab-sidebar">
+				<div class="sidebar-section">
+					<span class="sidebar-label">Category</span>
+					<span class="sidebar-value">{tool.category}</span>
+				</div>
+				<div class="sidebar-section">
+					<span class="sidebar-label">Tags</span>
+					<div class="sidebar-tags">
+						{#each tool.tags as tag}
+							<span class="card-lab-tag" style="margin-right: 4px; margin-bottom: 4px; display: inline-block;">{tag}</span>
+						{/each}
+					</div>
+				</div>
+				<div class="sidebar-section">
+					<span class="sidebar-label">Year</span>
+					<span class="sidebar-value">{tool.year}</span>
+				</div>
+				<div class="sidebar-section">
+					<span class="sidebar-label">License</span>
+					<span class="sidebar-value">{tool.license}</span>
+				</div>
+
+				<div class="sidebar-footer cta-group" style="padding-top: 20px; border-top: 1px solid rgba(0,33,71,0.1); margin-top: 20px; display: flex; flex-direction: column; gap: 12px;">
+					<a href={tool.repository} target="_blank" rel="noopener noreferrer" class="btn-lab" style="width: 100%; justify-content: center;">GITHUB REPO</a>
+					{#if tool.liveUrl}
+						<a href={tool.liveUrl} target="_blank" rel="noopener noreferrer" class="btn-lab" style="width: 100%; justify-content: center;">VIEW TOOL</a>
+					{/if}
+					<a href="/lab" class="btn-lab" style="width: 100%; justify-content: center;">BACK TO LAB</a>
+				</div>
+			</aside>
+		</div>
+	</main>
+
 {:else}
 	<main class="project-not-found">
-		<h1>Project not found</h1>
+		<h1>Not found</h1>
 		<p><a href="/lab">Back to Lab</a></p>
 	</main>
 {/if}

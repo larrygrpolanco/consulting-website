@@ -59,8 +59,8 @@
 				</ul>
 				<div class="project-feature">
 					<div class="feature-label">FEATURED PROJECT</div>
-					<a href="/lab/sabr-genre-analysis" class="project-link">
-						<span class="project-name">SABR / Genre Analysis Tool</span>
+					<a href="/lab/llm-temperature-consistency" class="project-link">
+						<span class="project-name">LLM Temperature & Consistency</span>
 						<span class="arrow">→</span>
 					</a>
 				</div>
@@ -105,8 +105,8 @@
 				</ul>
 				<div class="project-feature">
 					<div class="feature-label">FEATURED PROJECT</div>
-					<a href="/lab/conference-app" class="project-link">
-						<span class="project-name">Conference Companion App</span>
+					<a href="/lab/kpop-research-app" class="project-link">
+						<span class="project-name">K-Pop Accents Research Explorer</span>
 						<span class="arrow">→</span>
 					</a>
 				</div>
@@ -128,8 +128,8 @@
 				</ul>
 				<div class="project-feature">
 					<div class="feature-label">FEATURED PROJECT</div>
-					<a href="/lab/teacher-scaffolding-practice" class="project-link">
-						<span class="project-name">Teacher Scaffolding Practice App</span>
+					<a href="/lab/ita-trainer" class="project-link">
+						<span class="project-name">ITA Interactional Competence Trainer</span>
 						<span class="arrow">→</span>
 					</a>
 				</div>

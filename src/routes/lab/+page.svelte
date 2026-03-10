@@ -136,6 +136,9 @@
 									{#if project.website}
 										<a href={project.website} target="_blank" rel="noopener noreferrer" class="view-project">View Project</a>
 									{/if}
+									{#if project.repository}
+										<a href={project.repository} target="_blank" rel="noopener noreferrer" class="view-project">Github Repo</a>
+									{/if}
 									<a href="/lab/{project.slug}" class="view-project">Details</a>
 								</div>
 							</div>
@@ -154,38 +157,27 @@
 							</div>
 						</div>
 
-						<div class="project-main">
-							<a href={tool.liveUrl || tool.repository || `/lab/${tool.slug}`} target={(tool.liveUrl || tool.repository) ? "_blank" : undefined} rel={(tool.liveUrl || tool.repository) ? "noopener noreferrer" : undefined} class="project-media-link">
-								<div class="project-media">
-									{#if tool.media[0].type === 'image'}
-										<img src={tool.media[0].url} alt={tool.media[0].alt || tool.title} />
-									{:else}
-										<video src={tool.media[0].url} autoplay loop muted playsinline></video>
-									{/if}
-								</div>
-							</a>
-
-							<div class="project-content">
-								<h2 class="project-title">{tool.title}</h2>
-								<p class="project-description">{tool.description}</p>
-								<div class="tool-actions">
-									{#if tool.repository}
-										<a
-											href={tool.repository}
-											target="_blank"
-											rel="noopener noreferrer"
-											class="view-project">Github Repo</a
-										>
-									{/if}
-									{#if tool.liveUrl}
-										<a
-											href={tool.liveUrl}
-											target="_blank"
-											rel="noopener noreferrer"
-											class="view-project">View Tool</a
-										>
-									{/if}
-								</div>
+						<div class="tool-card">
+							<h2 class="project-title">{tool.title}</h2>
+							<p class="project-description">{tool.description}</p>
+							<div class="tool-actions">
+								{#if tool.repository}
+									<a
+										href={tool.repository}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="view-project">Github Repo</a
+									>
+								{/if}
+								{#if tool.liveUrl}
+									<a
+										href={tool.liveUrl}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="view-project">View Tool</a
+									>
+								{/if}
+								<a href="/lab/{tool.slug}" class="view-project">Details</a>
 							</div>
 						</div>
 					</article>
@@ -326,6 +318,13 @@
 		max-width: 800px;
 	}
 
+	.tool-card {
+		padding: 0px 40px;
+		border: 1px solid rgba(var(--foreground-rgb), 0.08);
+		max-width: 800px;
+		align-self: start;
+	}
+
 	.project-title {
 		font-size: 32px;
 		margin-bottom: 16px;
@@ -383,6 +382,10 @@
 
 		.work-container {
 			padding-top: 120px;
+		}
+
+		.tool-card {
+			padding: 24px;
 		}
 	}
 </style>
