@@ -1,5 +1,6 @@
 <script lang="ts">
 	import logo from '$lib/assets/logo.png';
+	import { contactModalOpen } from '$lib/stores/modal';
 </script>
 
 <nav class="nav" aria-label="Main Navigation">
@@ -18,7 +19,7 @@
 			<a href="/services" class="nav-link">services</a>
 			<a href="/blog" class="nav-link">blog</a>
 			<a href="/about" class="nav-link">about</a>
-			<a href="mailto:larry@kyeollab.io" class="nav-link contact-link">contact</a>
+			<button class="nav-link contact-link" onclick={() => contactModalOpen.set(true)}>contact</button>
 		</div>
 	</div>
 </nav>
@@ -97,6 +98,12 @@
 
 	.contact-link {
 		color: var(--accent);
+	}
+
+	button.nav-link {
+		background: none;
+		border: none;
+		cursor: pointer;
 	}
 
 	@media (max-width: 768px) {

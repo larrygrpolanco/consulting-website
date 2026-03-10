@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { tick } from 'svelte';
 	import { gsap } from 'gsap';
+	import { contactModalOpen } from '$lib/stores/modal';
 
 	let servicesRef: HTMLElement;
 
@@ -148,7 +149,7 @@
 	</section>
 
 	<section class="cta-section">
-		<a href="mailto:larry@kyeollab.io" class="cta-button">Start a Project</a>
+		<button class="cta-button" onclick={() => contactModalOpen.set(true)}>Start a Project</button>
 	</section>
 </main>
 
@@ -269,6 +270,9 @@
 		padding: 20px 40px;
 		background-color: var(--foreground);
 		color: var(--background);
+		border: none;
+		cursor: pointer;
+		font-family: var(--font-sans);
 		text-decoration: none;
 		font-weight: 600;
 		text-transform: uppercase;

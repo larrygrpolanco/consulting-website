@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { tick } from 'svelte';
 	import { gsap } from 'gsap';
+	import { contactModalOpen } from '$lib/stores/modal';
 
 	let aboutRef: HTMLElement;
 
@@ -58,8 +59,8 @@
 				<h3 class="member-name">Jihye Kim, Ph.D.</h3>
 				<p class="member-role">Cofounder & Research Director</p>
 				<p class="member-desc">
-					Lead Researcher ensuring every thing we do is grounded in current pedagogical theory and
-					qualitative rigor.
+					Lead Researcher ensuring every thing we do is grounded in current pedagogical theory, as well as
+					qualitative and quantitative rigor.
 				</p>
 			</div>
 		</div>
@@ -86,9 +87,7 @@
 		<h2 class="label">CONNECT</h2>
 		<div class="content">
 			<p>
-				For inquiries, please <a href="mailto:larrygrpolanco@gmail.com" class="accent"
-					>email me</a
-				>
+				For inquiries, please <button class="accent contact-btn" onclick={() => contactModalOpen.set(true)}>email us</button>
 			</p>
 		</div>
 	</section>
@@ -164,7 +163,16 @@
 	.accent {
 		color: var(--accent);
 		font-weight: 600;
+	}
 
+	.contact-btn {
+		background: none;
+		border: none;
+		cursor: pointer;
+		font-size: inherit;
+		font-family: inherit;
+		padding: 0;
+		text-decoration: underline;
 	}
 
 	.socials {
