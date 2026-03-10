@@ -14,6 +14,20 @@ export interface Tool {
 
 export const tools: Tool[] = [
 	{
+		slug: 'llm-temperature-consistency',
+		title: 'LLM Temperature & Consistency',
+		description:
+			'Replication package studying how temperature settings affect LLM annotation reliability.',
+		longDescription:
+			'A fully reproducible research package testing how OpenAI temperature settings (0.0–2.0) affect consistency and accuracy when using LLMs for rhetorical move-step annotation. Key finding: temperatures of 0.0–0.2 give significantly more consistent results without hurting accuracy; temperatures above 1.6 produce unusable output. Includes all scripts, config, and step-by-step instructions accessible to non-programmers.',
+		category: 'Research Tools',
+		tags: ['Python', 'OpenAI', 'Applied Linguistics', 'Replication'],
+		year: '2025',
+		status: 'live',
+		repository: 'https://github.com/larrygrpolanco/llm-temperature-consistency',
+		license: 'MIT'
+	},
+  {
 		slug: 'autoanki',
 		title: 'AutoAnki',
 		description: 'Turn a PDF or text file into a ready-to-import Anki vocabulary deck with TTS audio.',
@@ -52,20 +66,6 @@ export const tools: Tool[] = [
 		year: '2025',
 		status: 'live',
 		repository: 'https://github.com/larrygrpolanco/CC-NEWS-Corpus',
-		license: 'MIT'
-	},
-	{
-		slug: 'llm-temperature-consistency',
-		title: 'LLM Temperature & Consistency',
-		description:
-			'Replication package studying how temperature settings affect LLM annotation reliability.',
-		longDescription:
-			'A fully reproducible research package testing how OpenAI temperature settings (0.0–2.0) affect consistency and accuracy when using LLMs for rhetorical move-step annotation. Key finding: temperatures of 0.0–0.2 give significantly more consistent results without hurting accuracy; temperatures above 1.6 produce unusable output. Includes all scripts, config, and step-by-step instructions accessible to non-programmers.',
-		category: 'Research Tools',
-		tags: ['Python', 'OpenAI', 'Applied Linguistics', 'Replication'],
-		year: '2025',
-		status: 'live',
-		repository: 'https://github.com/larrygrpolanco/llm-temperature-consistency',
 		license: 'MIT'
 	}
 ];
