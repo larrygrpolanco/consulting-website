@@ -96,23 +96,5 @@ export const projects: Project[] = [
 			}
 		],
 		website: 'https://research-paper-webapp-poc.vercel.app/'
-	},
-	{
-		slug: 'lin2002-grader',
-		title: 'LIN2002 Grading Assistant',
-		description:
-			"An AI-powered essay grader that generates written feedback in the instructor's voice for a linguistics and film studies course.",
-		longDescription:
-			"Students in LIN2002 write essays analyzing films and citing specific scenes with timestamps. This app grades those essays and generates feedback in the instructor's voice. Paste in a student essay, select the film module, click Grade. The app sends the essay to Gemini along with a system prompt, few-shot examples drawn from previously graded work, and the specific rubric — then returns a numerical score and a paragraph of written feedback ready to copy and send. Built with SvelteKit and Google Gemini.",
-		tags: ['AI Grading', 'SvelteKit', 'Gemini', 'Ed Tech'],
-		year: '2025',
-		client: 'USF Linguistics Dept.',
-		media: [
-			{
-				type: 'image',
-				url: '/images/lin2002-grader.webp',
-				alt: 'LIN2002 grading assistant interface'
-			}
-		]
 	}
 ];
