@@ -83,8 +83,8 @@
 				</ul>
 				<div class="project-feature">
 					<div class="feature-label">FEATURED PROJECT</div>
-					<a href="/lab/taped-chinese" class="project-link">
-						<span class="project-name">Taped Chinese</span>
+					<a href="/lab/korean-learning" class="project-link">
+						<span class="project-name">LLM-Assisted Korean Learning Platform</span>
 						<span class="arrow">→</span>
 					</a>
 				</div>
