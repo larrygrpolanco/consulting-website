@@ -56,7 +56,8 @@
 <style>
 	.hero {
 		position: relative;
-		width: 100vw;
+		max-width: 1200px;
+		margin: 0 auto;
 		height: 70vh;
 		display: flex;
 		flex-direction: column;

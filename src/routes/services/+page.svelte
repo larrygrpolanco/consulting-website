@@ -106,8 +106,8 @@
 				</ul>
 				<div class="project-feature">
 					<div class="feature-label">FEATURED PROJECT</div>
-					<a href="/lab/kpop-research-app" class="project-link">
-						<span class="project-name">K-Pop Accents Research Explorer</span>
+					<a href="/lab/mall-lifelong-learning" class="project-link">
+						<span class="project-name">MALL for Lifelong Learning</span>
 						<span class="arrow">→</span>
 					</a>
 				</div>

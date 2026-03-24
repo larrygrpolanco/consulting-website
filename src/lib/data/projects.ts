@@ -17,18 +17,23 @@ export interface Project {
 
 export const projects: Project[] = [
 	{
-		slug: 'taped-chinese',
-		title: 'Taped Chinese',
+		slug: 'mall-lifelong-learning',
+		title: 'MALL for Lifelong Learning',
 		description:
-			'A web-based language learning platform digitizing FSI course materials with a vintage cassette aesthetic.',
+			'An interactive, scroll-driven research showcase on older adults using Duolingo for self-directed language learning.',
 		longDescription:
-			'Standard Chinese Platform transforms the comprehensive FSI course (originally used to train diplomats) into an accessible, interactive format for modern learners. The platform preserves the original 9-module structure while adding interactive features and a user-friendly interface.',
-		tags: ['Education Software', 'Web App', 'SvelteKit'],
-		year: '2025',
-		client: '',
-		media: [{ type: 'image', url: '/images/taped-chinese.webp', alt: 'Taped Chinese Interface' }],
-		website: 'https://tapedchinese.com',
-		repository: 'https://github.com/larrygrpolanco/standard-chinese-platform'
+			"Built for Jihye Kim's doctoral dissertation at USF's Department of World Languages. The site presents research on adults aged 60–83 using Duolingo in informal, self-directed contexts—challenging deficit-based narratives about older adults and technology. Features scroll-driven animations, entrance transitions, and number tickers to bring the research data to life. Built with React 19, Tailwind CSS v4, and Motion.",
+		tags: ['Research Dissemination', 'React', 'Interactive Website'],
+		year: '2026',
+		client: 'Jihye Kim, Ph.D. / USF',
+		media: [
+			{
+				type: 'image',
+				url: '/images/mall-lifelong-learning.webp',
+				alt: 'MALL for Lifelong Learning research showcase'
+			}
+		],
+		website: 'https://mall-for-lifelong-learning.vercel.app'
 	},
 	{
 		slug: 'korean-learning',
@@ -38,7 +43,7 @@ export const projects: Project[] = [
 		longDescription:
 			"Built for college-level Korean courses at USF in collaboration with Professor Jihye Kim. Each lesson maps to a textbook chapter and provides conversations and vocabulary in context, grammar conjugation tables and pattern explanations, and AI-powered roleplay scenarios for speaking practice. Students use the platform outside the classroom to reinforce what they're learning. Built with SvelteKit and deployed on Vercel.",
 		tags: ['Education Software', 'Web App', 'SvelteKit', 'LLM'],
-		year: '2025',
+		year: '2026',
 		client: 'USF / Prof. Jihye Kim',
 		media: [
 			{
@@ -57,13 +62,13 @@ export const projects: Project[] = [
 		longDescription:
 			"Each activity isolates one interactional skill — managing turns, checking understanding, redirecting off-topic students, handling confusion — and wraps it in a tightly scoped roleplay scenario. The AI student's behavior is scripted to create the exact moment where that skill is needed. After the session, a separate LLM reviews the full transcript and returns coaching feedback: one strength, one next step, and a skill status. Built with Next.js, LiveKit, and the OpenAI Realtime API. Developed in active collaboration with applied linguistics researchers at USF.",
 		tags: ['Voice AI', 'Ed Tech', 'Next.js', 'LiveKit', 'Research Collab'],
-		year: '2025',
+		year: '2026',
 		client: 'USF Research Lab',
 		media: [
 			{ type: 'image', url: '/images/ita-trainer.webp', alt: 'ITA Trainer practice interface' }
 		],
 		website: 'https://ita-trainer.vercel.app/',
-    repository: 'https://github.com/larrygrpolanco/ita-trainer'
+		repository: 'https://github.com/larrygrpolanco/ita-trainer'
 	},
 	{
 		slug: 'fulbright-planner',
@@ -77,6 +82,20 @@ export const projects: Project[] = [
 		media: [{ type: 'image', url: '/images/fulbright-planner.webp', alt: 'Fulbright Planner UI' }],
 		website: 'https://fulbright-lesson-planner.vercel.app/',
 		repository: 'https://github.com/larrygrpolanco/ETA-lesson-planner'
+	},
+	{
+		slug: 'taped-chinese',
+		title: 'Taped Chinese',
+		description:
+			'A web-based language learning platform digitizing FSI course materials with a vintage cassette aesthetic.',
+		longDescription:
+			'Standard Chinese Platform transforms the comprehensive FSI course (originally used to train diplomats) into an accessible, interactive format for modern learners. The platform preserves the original 9-module structure while adding interactive features and a user-friendly interface.',
+		tags: ['Education Software', 'Web App', 'SvelteKit'],
+		year: '2025',
+		client: '',
+		media: [{ type: 'image', url: '/images/taped-chinese.webp', alt: 'Taped Chinese Interface' }],
+		website: 'https://tapedchinese.com',
+		repository: 'https://github.com/larrygrpolanco/standard-chinese-platform'
 	},
 	{
 		slug: 'kpop-research-app',
