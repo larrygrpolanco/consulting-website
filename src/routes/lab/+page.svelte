@@ -100,7 +100,7 @@
 			</button>
 		</div>
 		<p class="sub-headline">
-			Selected works, research collaborations, and experiments. Check out our open-source tools.
+			Things we've built: research tools, learning platforms, and experiments. Everything marked open source is free to use and modify.
 		</p>
 	</header>
 

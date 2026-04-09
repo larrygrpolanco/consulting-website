@@ -1,164 +1,100 @@
 # 차원 Chaone Labs
-### Research & Development for Language Education and Linguistics
+### Independent R&D Studio
 
-> "Applied linguists who code."
+> "We build tools for researchers and educators — because someone has to."
 
 ---
 
 ## What We Do
 
-We build custom software for language research and education. Research tools, learning apps, interactive websites—all designed for the specific needs of applied linguistics.
+Chaone Labs is an independent R&D studio working at the intersection of language, data, and technology. We build research tools, learning apps, and data pipelines — for ourselves, for collaborators, and occasionally for hire. Most of our work starts as something we needed and couldn't find. Some of it stays open source. Some of it turns into something more.
 
-We're not outsiders trying to sell you generic EdTech. We're researchers and educators who learned to code because we were tired of software that didn't understand our work.
-
----
-
-## What Makes Us Different
-
-### Domain Expertise
-We do research and teaching ourselves. We understand qualitative coding, genre analysis, discourse tracking, and curriculum design—not from a client brief, but from lived experience.
-
-### Mission-Driven
-We're not chasing venture capital or building for an exit. We're solving real problems for researchers and educators. Our measure of success is impact and sustainability, not scale at all costs.
-
-### The Missing Middle
-Most research and teaching needs fall into a gap: too specific for commercial software, too complex for DIY scripts. That's where we work. We build tools that are robust enough to be reliable but transparent enough to be trusted.
-
-### Transparency
-Our code is scholarship. It should be transparent, reproducible, and built to last. We treat software development as an extension of academic rigor.
+Run by Larry Grullon-Polanco (lead engineer) with research direction from Jihye Kim (research director).
 
 ---
 
-## What We Build
+## The Lab
 
-### Open Tools (Free, Open-Source)
-Software you can download, use, and modify:
-- **Fulbright Lesson Planner**- Lesson planning tool for Fulbright English Teaching assistants
-- **SABR AutoCoder** - LLM-assisted pipeline for qualitative coding and discourse analysis
-- **Genre Analysis Tool** (in progress) - Automated move-step analysis
-
+### Open Source Tools
+Free to use, modify, and build on:
+- **LLM Temperature & Consistency** — Replication package on how temperature affects LLM annotation reliability
+- **AutoAnki** — Turn PDFs into ready-to-import Anki vocabulary decks with TTS audio
+- **Scholar Keyword Scraper** — Multi-database literature sweep with deduplication and relevance scoring
+- **CC-NEWS Corpus Pipeline** — Reproducible pipeline for targeted corpus building from Common Crawl
+- **LLM-Assisted Thyroid Cancer Pathology Abstraction** — Zero-shot structured data extraction from clinical pathology reports (Moffitt Cancer Center)
 
 All open tools are MIT licensed and available on GitHub.
 
-### Projects (Client Work & Research)
-Custom development for departments, publishers, and researchers:
-- **Korean Learning Platform** (in progress) - Custom curriculum-aligned practice
-- **TapedChinese** - Deterministic content validation for language learning
-- Dissertation showcase websites
-- Custom curriculum apps
-- Interactive conference presentations
-- Bespoke research tools and analysis pipelines
+### Projects
+- **Korean Learning Platform** — Curriculum-aligned LLM-assisted Korean practice app
+- **ITA Interactional Competence Trainer** — Training tool for international teaching assistants
+- **MALL for Lifelong Learning** — Interactive research companion site
+- **TapedChinese** — Deterministic content validation for language learning
+- Dissertation showcase websites, conference companion apps, bespoke research pipelines
 
 ---
 
-## How We Work
+## Collaborate
 
-Departments, publishers, and researchers hire us for custom software development, consulting, and workshops. We specialize in projects that require both technical skill and deep domain knowledge in applied linguistics.
+We take on a small number of collaborations each year at the intersection of language, data, and technology. Areas of work:
+
+1. **Research Tools** — Analysis pipelines, data cleaning, methodology sandboxes
+2. **Educational Software** — Curriculum-aligned learning apps, vocabulary tools, assessments
+3. **Interactive Websites** — Conference companion apps, research visualization, interactive white papers
+4. **Consulting & Workshops** — AI integration, data strategy, responsible AI guidance
 
 **Contact**: larrygrpolanco@gmail.com
 
 ---
 
-## The 5-Year Horizon (Success Metrics)
+## The Team
 
-By 2030, success looks like:
+**Larry Grullon-Polanco, M.A.** — Cofounder & Lead Engineer
+Applied linguist and full-stack engineer. M.A. in Applied Linguistics from USF, Fulbright ETA to Taiwan, researcher at Moffitt Cancer Center on LLM-based clinical text abstraction. Builds at the intersection of discourse analysis, data science, and software.
 
-1. **Impact**: [TBD—still figuring out the right metric. Downloads? GitHub stars? Active researchers using our tools?]
-2. **Revenue**: $30-40K/year from client commissions and workshops
-3. **Scholarship**: 3+ peer-reviewed papers on the tools and approaches we develop
-
-This isn't about unicorn status or IPOs. It's about building a sustainable practice that serves the field.
-
----
-
-## Current Phase & Roadmap
-
-### Phase 1: Grounding (Current)
-- [ ] Establish legal entity (Chaone Labs LLC)
-- [ ] Deploy website (chaonelabs.com or similar)
-- [ ] Release first open tools (SABR, TapedChinese)
-
-### Phase 2: Outreach (Next)
-- [ ] Present at TESOL/AAAL conferences
-- [ ] Write about our first completed projects
-- [ ] Secure first bespoke client
-
-### Phase 3: Platform (Future)
-- [ ] Release "Chaone Open Standard" for qualitative data interchange
-- [ ] Launch institutional partnerships
+**Jihye Kim, Ph.D.** — Cofounder & Research Director
+Applied linguist specializing in second language acquisition, Korean language pedagogy, and sociolinguistics. Brings pedagogical grounding and research rigor to the lab's education work, and connects the lab to the applied linguistics research community.
 
 ---
 
 ## Tech Stack
 
-- **Frontend**: SvelteKit (high performance, reactive)
-- **Styling**: Tailwind CSS + custom design system
-- **Backend**: Python (FastAPI, LangChain for LLM orchestration)
-- **Data**: PostgreSQL, portable JSON formats (researcher privacy)
+- **Frontend**: SvelteKit + Tailwind CSS
+- **Backend**: Python (FastAPI, LLM orchestration)
+- **Data**: PostgreSQL, portable JSON formats
+- **Deployment**: Vercel
 
 ---
 
 ## Repository Structure
 
-This repository contains the Chaone Labs website:
-
 ```
 /src
   /lib
-    /components  # UI components
-    /data        # Project data, content
+    /components   # Nav, Hero, ContactModal
+    /data         # projects.ts, tools.ts
+    /content/blog # Markdown blog posts
+    /stores       # Modal state
   /routes
-    /            # Home
-    /tools       # Open-source software showcase
-    /work        # Client projects & research work
-    /services    # What we offer
-    /about       # The team
+    /             # Home
+    /lab          # Lab — projects & open source tools
+    /collaborate  # Collaborate (formerly services)
+    /writing      # Writing (formerly blog)
+    /about        # The team
+    /blog/[slug]  # Individual post pages
+    /lab/[slug]   # Individual project/tool detail pages
 ```
-
----
-
-## The Team
-
-**Larry Grullon-Polanco, M.A.** - Cofounder & Lead Engineer
-Applied Linguist specializing in Discourse Analysis, LLMs, and Full-Stack Development.
-
-**Jihye Kim, Ph.D.** - Cofounder & Research Director
-Lead Researcher ensuring every tool is grounded in current pedagogical theory and qualitative rigor.
 
 ---
 
 ## License & Philosophy
 
-- **Open Tools**: MIT License (free, open-source)
+- **Open Tools**: MIT License
 - **Client Work**: Proprietary (as negotiated)
-- **Content/Research**: Creative Commons CC-BY (research should be open)
+- **Content/Research**: Creative Commons CC-BY
 
-We build software for researchers who don't have to code.
-
----
+We're early-stage and intentionally small. That's not a limitation — it's the point.
 
 ---
 
-## Internal Reference (Strategic Notes)
-
-*This section is for internal use—candid notes that aren't polished for public consumption.*
-
-### Strategic Notes
-- The line between "tools" and "projects" will remain blurry—some tools are projects, some projects become tools. We'll figure it out as we go.
-- Revenue model has evolved: started thinking institutional licenses, now commission-based (client work pays for open tools).
-- User base metric is TBD—maybe downloads, maybe GitHub stars, maybe something else. Need to figure out what actually indicates impact.
-
-### What We're Learning
-- **Direct copy works better than metaphors.** Early iterations talked about "grain" and "texture"—researchers just wanted to know what we build.
-- **"Applied linguists who code" is the hook.** Domain expertise + technical capability is the differentiator.
-- **Researchers care about specificity.** Generic promises don't work. Concrete examples (move-step coding, discourse tracking) establish credibility immediately.
-
-### Future Considerations
-- Should we eventually split Tools into its own subdomain? (tools.chaonelabs.com)
-- How do we handle projects that are both open-source AND client work?
-- Conference presentations—do these go under Projects or a separate "Research" section?
-- Do we need a blog? If so, what's the strategy—technical tutorials, project write-ups, reflections on the field?
-
----
-
-**Last updated**: 2025-12-29
+**Last updated**: 2026-04-09

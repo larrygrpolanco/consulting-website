@@ -1,72 +1,43 @@
 ---
-title: 'One Run Is Not Enough: What 450,000 Annotations Taught Us About LLM Reliability'
+title: 'What Do LLMs Actually Know?'
 date: '2025-12-28'
-description: 'LLMs can do genre analysis. But accuracy and consistency are not the same thing, and that distinction changes everything for applied linguistics research.'
+description: "LLMs have strong built-in preferences for certain answers. Making them more random does not make them more creative or accurate. It just makes them less reliable."
 author: 'Larry Grullon-Polanco'
 tags: ['LLM', 'Classification', 'Research', 'Genre Analysis', 'Applied Linguistics']
 ---
 
-Something that used to require months of expert annotation can now be done overnight. Large language models can read research article introductions and label the rhetorical moves in them, the strategic moves writers make to establish territory, identify gaps, and announce their contributions, accurately and at scale.
+Here's a question I keep coming back to: when an LLM labels a sentence correctly, what does that actually mean? Did it *know* the right answer? Or did it just happen to land on it?
 
-That's genuinely exciting. But before applied linguists hand over their corpora to these tools, there's a question that almost nobody has asked: **does the model give the same answer twice?**
+The distinction matters more than it sounds.
 
-## The Problem Not Being Measured
+## How LLMs Actually Make Decisions
 
-Most LLM studies in applied linguistics report results from a single run. Run the model once, compare its labels to expert annotations, report the F1 score. Done.
+When a language model reads a sentence and picks a label, it's not looking the answer up in some internal database of facts. It's sampling from a probability distribution: a ranked list of possible next tokens, each with an assigned weight based on the training data. The model doesn't produce *the* answer. It produces *an* answer, drawn from a distribution that reflects everything it learned during training.
 
-But LLMs are probabilistic. They do not produce the same output twice by default. A parameter called **sampling temperature** controls how the model selects tokens from probability distributions. At higher temperatures, the model is more likely to pick lower-probability words and therefore labels. Every time you run the model, it's making a slightly different set of choices.
+There's a parameter called **temperature** that controls how that sampling works. At temperature 0, the model always picks the highest-probability token. Pure determinism. At higher temperatures, it samples more broadly, giving lower-probability options a real chance of being selected.
 
-If you annotate 500 sentences on Monday and re-run the same prompt on Tuesday, you may get different labels. That variability is invisible unless you go looking for it.
+The popular intuition is that lower temperature means more conservative and boring, higher temperature means more creative and unpredictable. That's roughly right for creative writing. For classification tasks, where there's a correct answer, it breaks down completely.
 
-We went looking.
+## What 450,000 Annotations Showed
 
-## What We Did
+I ran GPT-4.1-mini on 40 research article introductions, 50 times each, across 9 temperature settings from 0.0 to 2.0. The task was rhetorical move-step annotation using the Create-a-Research-Space (CaRS) framework, a well-established system for labeling the strategic moves writers make in academic introductions.
 
-We ran GPT-4.1-mini on 40 research article introductions, 50 times each, across 9 different temperature settings, from T = 0.0 to T = 2.0. The task: annotate each sentence using the Create-a-Research-Space (CaRS) framework, a well-established rhetorical move-step system with 3 moves and 11 steps.
+That generated over **450,000 sentence annotations**.
 
-That generated over **450,000 sentence annotations** and 18,000 individual runs.
+Here's what I found: accuracy was essentially flat across all nine temperature settings. The model's F1 scores against expert annotations barely moved whether I ran it cold or hot. So raising temperature didn't help.
 
-For each temperature, we asked three questions:
-1. Did the model produce usable output at all?
-2. Did it produce *the same* output across runs?
-3. Did it produce *correct* output compared to expert annotations?
+But consistency was not flat at all.
 
-## The Central Finding: Accuracy and Consistency Are Not the Same Thing
+At T = 0.0, the model's agreement with itself across 50 repeated runs was 0.948. Excellent reliability. At T = 2.0, it had dropped to 0.853, and some specific categories had fallen much further. "Topic generalizations," the kind of background statement that doesn't have a clear linguistic signal, dropped nearly 0.4 points. And at T = 2.0, more than half of all outputs failed structurally. The model stopped producing parsable labels entirely.
 
-Classification performance was **essentially flat across all nine temperature settings**. Move-level F1 scores held steady at around 0.86. Step-level scores stayed near 0.46. The model was equally "accurate," in the sense of aligning with expert annotations, whether we ran it at T = 0.0 or T = 2.0.
+Same accuracy. Totally different reliability.
 
-Consistency, however, was not flat at all.
+## What That Means
 
-At T = 0.0, Krippendorff's alpha across repeated runs was **0.948**, excellent reliability. At T = 2.0, it had dropped to **0.853**, still acceptable at the move level, but with step-level categories degrading far more steeply. Step 1b (topic generalizations) fell 0.391 points. And at T = 2.0, over **50% of all outputs failed structurally**, the model stopped producing parsable labels entirely.
+The model didn't "know" the answer in any stable sense. It had a strong preference for certain answers, and at low temperature it almost always acted on those preferences. At high temperature it still had those preferences, but random noise could override them. You weren't getting more creativity. You were just getting more noise.
 
-## What This Means in Practice
+The practical upshot: for any annotation task, use T = 0.2 or below, run the model multiple times on a small subset of your data before scaling up, and report your inter-iteration reliability. The same standards we apply to human coders should apply here.
 
-**A single accurate run does not guarantee a reproducible one.**
+The more interesting thing I noticed: the model's inconsistency wasn't random. It concentrated in the rhetorically ambiguous categories, the sentences that skilled human annotators also disagree about. Where the model wavered is where the task is genuinely hard. That's not a flaw to be engineered away. That's a signal about where more theoretical work is needed.
 
-The practical guidance is straightforward:
-
-**Use low temperature (T 0.2 or below).** Consistency was highest here, above 0.94 overall, and classification performance was identical. You gain nothing by going higher for classification tasks.
-
-**Run an inter-iteration reliability check before analyzing your full corpus.** Run the model 10-20 times on a small subset of your data. Calculate Krippendorff's alpha across those runs. If it falls below 0.67, your prompt may need refinement, or the category distinctions may be too ambiguous for the model to apply consistently. This is the same reliability check we already apply to human coders, and it should apply to automated annotation too.
-
-**Report your settings.** Temperature, number of test runs, and inter-iteration reliability scores should appear in any study using LLM annotation. Right now, many papers don't list them. That needs to change.
-
-## The Texture of the Task
-
-Consistency didn't degrade uniformly. Some rhetorical categories held up well even at higher temperatures. Others collapsed.
-
-"Indicating a gap" (Step 2b) was remarkably stable. This step tends to co-occur with phrases like *however* or *no study has examined*, giving the model a clear linguistic signal.
-
-"Topic generalizations" (Step 1b) and "reviewing previous research" (Step 1c) were far more volatile. These are categories where the function isn't marked on the surface. You have to read the surrounding context to understand whether a sentence is establishing background or summarizing a specific study. Higher temperatures made the model more likely to waver between defensible interpretations.
-
-Where the model is inconsistent is where the task is hard. That boundary, the rhetorical gray zones that even skilled human annotators disagree on, is genuinely interesting territory for the field to keep exploring.
-
-## What Comes Next
-
-This study used a fixed zero-shot prompt to isolate the effect of temperature. A lot of variables were deliberately held constant: prompting strategy, model size, corpus domain (all biology), annotation framework. Each of those is its own research question.
-
-The core finding should hold across contexts. Lower temperatures narrow the probability distribution the model samples from. Narrower distributions produce more consistent outputs. But where the thresholds fall will be different for different frameworks, models, and prompting setups. That's exactly why inter-iteration reliability testing matters. Measure it rather than assume it.
-
-The full replication package, code, data, all 450,000+ annotations, and validation scripts, is openly available at [github.com/larrygrpolanco/llm-temperature-consistency](https://github.com/larrygrpolanco/llm-temperature-consistency).
-
-Applied linguists now have tools that can annotate corpora at a scale that was unthinkable a decade ago. What we're working out now is how to use them rigorously, and that's the right problem to be working on.
+The full replication package, code, data, all 450,000+ annotations, is on [GitHub](https://github.com/larrygrpolanco/llm-temperature-consistency).

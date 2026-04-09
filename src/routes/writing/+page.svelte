@@ -28,12 +28,12 @@
 </script>
 
 <svelte:head>
-	<title>Blog | 차원 Chaone Labs</title>
+	<title>Writing | 차원 Chaone Labs</title>
 </svelte:head>
 
 <main bind:this={blogRef} class="blog-container">
 	<header class="blog-header">
-		<h1 class="text-serif">Blog<sup class="count">({data.posts.length})</sup></h1>
+		<h1 class="text-serif">Writing<sup class="count">({data.posts.length})</sup></h1>
 		<div class="sidebar-header"><span>LATEST</span></div>
 		<p class="description">
 			Notes on language, technology, and the things I'm trying to figure out.
@@ -171,7 +171,7 @@
 			grid-template-columns: 1fr;
 			gap: 8px;
 		}
-		
+
 		.list-header {
 			display: none;
 		}

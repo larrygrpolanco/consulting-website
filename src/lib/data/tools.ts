@@ -67,5 +67,19 @@ export const tools: Tool[] = [
 		status: 'live',
 		repository: 'https://github.com/larrygrpolanco/CC-NEWS-Corpus',
 		license: 'MIT'
+	},
+	{
+		slug: 'pathology-llm-extraction',
+		title: 'LLM-Assisted Thyroid Cancer Pathology Abstraction',
+		description:
+			'Evaluating open-source LLMs for zero-shot structured data extraction from thyroid cancer pathology reports at Moffitt Cancer Center.',
+		longDescription:
+			'Developing and evaluating large language model pipelines for abstracting structured data from thyroid cancer pathology reports at Moffitt Cancer Center. The work explores accuracy thresholds, expert-in-the-loop validation, and what it takes to build trust in AI systems for clinical use. Presented at the 2026 Moffitt Scientific Symposium.\n\nCitation: Grullon Polanco, L., Veloski, C., Monsour, E., Dogra, P., Tarasova, V., Pedraza-Sanchez, L. (2026) Evaluating Open-Source Large Language Models for Zero-Shot Thyroid Cancer Pathology Abstraction [Poster presentation], Moffitt Scientific Symposium, Tampa, FL.',
+		category: 'Research & Data',
+		tags: ['Python', 'LLM', 'Clinical NLP', 'Moffitt Cancer Center', 'Healthcare AI'],
+		year: '2026',
+		status: 'live',
+		repository: 'https://github.com/larrygrpolanco/pathology-llm-data-extraction',
+		license: 'MIT'
 	}
 ];

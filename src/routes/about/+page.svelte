@@ -33,13 +33,20 @@
 </svelte:head>
 
 <main bind:this={aboutRef} class="about-container">
+	<section class="section section-framing">
+		<h2 class="label">ABOUT</h2>
+		<div class="content">
+			<p>
+				Chaone Labs is an independent R&D studio run by Larry Grullon-Polanco, with research direction from cofounder Jihye Kim. Most of what we build starts as something we needed ourselves. A better lesson planner, a research tool that didn't exist, a way to make applied linguistics more usable. Some of it stays open source and some of it turns into collaborations.
+			</p>
+		</div>
+	</section>
+
 	<section class="section section-bio">
 		<h2 class="label">BIO</h2>
 		<div class="content">
 			<p>
-				<strong>차원 Chaone Labs</strong> is a research and development studio for language education
-				and linguistics. We build custom software—research tools, learning apps, and interactive websites.
-				Run by applied linguists and educators who understand technologies.
+				<strong>차원 Chaone Labs</strong> is an independent R&D studio working at the intersection of language, data, and technology. We build research tools, learning apps, and data pipelines for ourselves, for collaborators, and occasionally for hire. The lab is small and driven by the work itself.
 			</p>
 		</div>
 	</section>
@@ -51,16 +58,14 @@
 				<h3 class="member-name">Larry Grullon-Polanco, M.A.</h3>
 				<p class="member-role">Cofounder & Lead Engineer</p>
 				<p class="member-desc">
-					Applied Linguist & Engineer specializing in the intersection of Discourse Analysis, LLMs,
-					and Full-Stack Development.
+					Applied linguist and full-stack engineer. M.A. in Applied Linguistics from USF, Fulbright ETA to Taiwan, and researcher at Moffitt Cancer Center working on LLM-based clinical text abstraction. Builds at the intersection of discourse analysis, data science, and software.
 				</p>
 			</div>
 			<div class="member">
 				<h3 class="member-name">Jihye Kim, Ph.D.</h3>
 				<p class="member-role">Cofounder & Research Director</p>
 				<p class="member-desc">
-					Lead Researcher ensuring every thing we do is grounded in current pedagogical theory, as well as
-					qualitative and quantitative rigor.
+					Applied linguist and researcher specializing in second language acquisition, Korean language pedagogy, and sociolinguistics. Jihye brings the pedagogical grounding and research rigor that keeps the lab's education work working, particularly on Korean language tools and curriculum-aligned projects.
 				</p>
 			</div>
 		</div>
@@ -79,7 +84,9 @@
 				research. We custom build tools for people and their needs.
 			</p>
 			<br />
-			<p>Our software is specific, transparent, and built to last.</p>
+			<p>Our software and tools are specific, transparent, and built to last.</p>
+			<br />
+			<p>We're early-stage and intentionally small.</p>
 		</div>
 	</section>
 
@@ -87,7 +94,7 @@
 		<h2 class="label">CONNECT</h2>
 		<div class="content">
 			<p>
-				For inquiries, please <button class="accent contact-btn" onclick={() => contactModalOpen.set(true)}>email us</button>
+				Have a question or an idea? <button class="accent contact-btn" onclick={() => contactModalOpen.set(true)}>Reach out.</button>
 			</p>
 		</div>
 	</section>
