@@ -43,8 +43,8 @@
 <section bind:this={heroRef} class="hero" class:visible={show}>
 	<div class="header">
 		<h1 class="headline">CHAONE LABS</h1>
-		<h2 class="sub-headline">We build tools for researchers and educators — because someone has to.</h2>
-		<p class="description">An independent R&D lab. Most of our work is open source. Some of it becomes something more.</p>
+		<h2 class="sub-headline">We build tools for researchers and educators. Turning field insights into usable technology.</h2>
+		<p class="description">An independent R&D lab. Most of our work is open source. Some of it evolves in different directions.</p>
 	</div>
 
 	<div class="cta-group">
